@@ -1,0 +1,98 @@
+body, #container {
+    background-color: gray;
+    font-family: Georgia, Helvetica, serif;
+}
+a, a:visited, a:link, a:active  {
+    color: #1474B4;
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+    background-color: #1474B4;
+}
+h1, h2, h3, h4 {
+    margin: 0px;
+    color: #1474B4;
+}
+#container {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+}
+#header, #content {
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#header {
+    font-size: 20px;
+}
+#header #menu {
+    float: right;
+}
+
+.spacer_y40 {
+    height: 40px;
+}
+
+#newsfloater {
+    float: right;
+    width: 300px;
+}
+
+#news .label{
+    font-weight:bold;
+}
+#news .small{
+    color:#666666;
+    font-size:10px;
+}
+
+/*
+ * The style rules below are rendered at http://www.spiffycorners.com/
+ */
+.rounded{
+    display:block
+}
+.rounded *{
+    display:block;
+    height:1px;
+    overflow:hidden;
+    font-size:.01em;
+    background:#ffffff
+}
+.rounded1{
+    margin-left:3px;
+    margin-right:3px;
+    padding-left:1px;
+    padding-right:1px;
+    border-left:1px solid #79afd4;
+    border-right:1px solid #79afd4;
+    background:#c4dcec
+}
+.rounded2{
+    margin-left:1px;
+    margin-right:1px;
+    padding-right:1px;
+    padding-left:1px;
+    border-left:1px solid #2b81bb;
+    border-right:1px solid #2b81bb;
+    background:#d2e4f0
+}
+.rounded3{
+    margin-left:1px;
+    margin-right:1px;
+    border-left:1px solid #d2e4f0;
+    border-right:1px solid #d2e4f0;
+}
+.rounded4{
+    border-left:1px solid #79afd4;
+    border-right:1px solid #79afd4
+}
+.rounded5{
+    border-left:1px solid #c4dcec;
+    border-right:1px solid #c4dcec
+}
+.roundedfg{
+    background:#ffffff
+}

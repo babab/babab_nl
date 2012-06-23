@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block body-attr %}{% endblock %}
+
+{% block menu %}
+  Home |
+  <a href="#/projects/">Projects</a> |
+  <a href="/news/">News</a>
+{% endblock %}
+{% block content %}
+  <div id="newsfloater">
+    <div id="news">
+      {% for item in news %}
+      <span class="label">{{ item.title }}</span><br>
+      <span class="small">Posted at {{ item.time }}</span><br>
+      <span class="small">Tagged as
+        {% for tag in item.tag.all %}
+        <a href="#/news/tag/{{ tag.name }}">{{ tag.name }}</a>
+        {% endfor %}
+      </span><br>
+        <p>
+        {{ item.text }}
+        </p>
+        <br>
+      {% endfor %}
+    </div>
+  </div>
+
+  <h1>Home</h1>
+  <p>
+    Welcome to the Internet home of Benjamin Althues
+  </p>
+
+{% endblock %}
+
+{# vim: set et ts=2 sw=2 sts=2 ft=htmldjango: #}

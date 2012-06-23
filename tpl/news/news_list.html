@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}News{% endblock %}
+{% block body-attr %}{% endblock %}
+
+{% block menu %}
+  <a href="/">Home</a> |
+  <a href="#/projects/">Projects</a> |
+  News
+{% endblock %}
+
+
+{% block content %}
+  <h1>News</h1>
+  <p>
+    Here are some small posts about what I have been doing lately.
+  </p>
+
+  <div id="news">
+    {% for item in news %}
+    <span class="label">{{ item.title }}</span><br>
+    <span class="small">Posted at {{ item.time }}</span><br>
+    <span class="small">Tagged as
+      {% for tag in item.tag.all %}
+      <a href="#/news/tag/{{ tag.name }}">{{ tag.name }}</a>
+      {% endfor %}
+    </span><br>
+      <p>
+      {{ item.text }}
+      </p>
+      <br>
+    {% endfor %}
+  </div>
+{% endblock %}
+
+{# vim: set et ts=2 sw=2 sts=2 ft=htmldjango: #}

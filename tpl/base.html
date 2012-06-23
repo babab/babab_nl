@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <title>{% block title %}{% endblock %} at babab.nl</title>
+  </head>
+  <body {% block body-attr %}{% endblock %}>
+    <div id="container">
+      <div>
+        <b class="rounded"><b class="rounded1"><b></b></b>
+        <b class="rounded2"><b></b></b><b class="rounded3"></b>
+        <b class="rounded4"></b><b class="rounded5"></b></b>
+        <div class="roundedfg">
+          <div id="header">
+            <strong>babab.nl</strong>
+            <div id="menu">
+              {% block menu %}
+              {% endblock %}
+            </div>
+          </div>
+        </div>
+        <b class="rounded"><b class="rounded5"></b><b class="rounded4"></b>
+        <b class="rounded3"></b><b class="rounded2"><b></b></b>
+        <b class="rounded1"><b></b></b></b>
+      </div>
+      <div class="spacer_y40"></div>
+      <div>
+        <b class="rounded"><b class="rounded1"><b></b></b>
+        <b class="rounded2"><b></b></b><b class="rounded3"></b>
+        <b class="rounded4"></b><b class="rounded5"></b></b>
+        <div class="roundedfg">
+          <div id="content">
+            {% block content %}
+              Welcome to the Internet home of Benjamin Althues
+            {% endblock %}
+          </div>
+        </div>
+        <b class="rounded"><b class="rounded5"></b><b class="rounded4"></b>
+        <b class="rounded3"></b><b class="rounded2"><b></b></b>
+        <b class="rounded1"><b></b></b></b>
+      </div>
+    </div>
+  </body>
+</html>
+
+{# vim: set et ts=2 sw=2 sts=2 ft=htmldjango: #}
