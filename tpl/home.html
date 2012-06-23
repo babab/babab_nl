@@ -12,13 +12,13 @@
   <div id="newsfloater">
     <div id="news">
       {% for item in news %}
-      <span class="label">{{ item.title }}</span><br>
-      <span class="small">Posted at {{ item.time }}</span><br>
-      <span class="small">Tagged as
+      <strong>{{ item.title }}</strong><br>
+      <small>Posted at {{ item.time }} |
+        Tagged with
         {% for tag in item.tag.all %}
         <a href="#/news/tag/{{ tag.name }}">{{ tag.name }}</a>
         {% endfor %}
-      </span><br>
+      </small><br>
         <p>
         {{ item.text }}
         </p>
