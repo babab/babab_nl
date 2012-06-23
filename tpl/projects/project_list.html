@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}News{% endblock %}
+{% block body-attr %}{% endblock %}
+
+{% block menu %}
+  <a href="/">Home</a> |
+  Projects |
+  <a href="/news/">News</a>
+{% endblock %}
+
+
+{% block content %}
+  <h1>Projects</h1>
+  <div class="spacer_y40"></div>
+
+  <div id="projects">
+    {% for p in projects %}
+      <h2>{{ p.name }}</h2>
+      <small>
+        <table>
+          <tr>
+            <th>Tags</th>
+            <td>
+              {% for t in p.tags.all %}
+                {{ t.name }}
+              {% endfor %}
+            </td>
+        {% if  p.projectrelease_set %}
+          <table>
+            <tr>
+              <th>Version</th>
+              <th>Release date</th>
+            </tr>
+            {% for rel in p.projectrelease_set.all %}
+              <tr>
+                <td>
+                  {{ rel.name }}
+                </td>
+                <td>
+                  {{ rel.date }}
+                </td>
+              </tr>
+            {% endfor %}
+          </table>
+        {% endif %}
+      </small>
+      <p>
+        {{ p.description }}
+      </p>
+      <hr>
+    {% endfor %}
+  </div>
+{% endblock %}
+
+{# vim: set et ts=2 sw=2 sts=2 ft=htmldjango: #}
