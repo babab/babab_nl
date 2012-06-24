@@ -1,3 +1,17 @@
+Personal website of Benjamin Althues
+******************************************************************************
+
+My new website, written using Django.
+
+Features
+==============================================================================
+
+ * News application
+ * Software projects application
+
+License
+==============================================================================
+
 Copyright (C) 2012 Benjamin Althues
 
 This software is provided 'as-is', without any express or implied
