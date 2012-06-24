@@ -41,6 +41,22 @@ th {
     float: right;
     width: 300px;
 }
+#copyright {
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    font-size:10px;
+}
+#footer {
+    color: #fff;
+    float: right;
+    font-size:10px;
+    padding: 10px;
+}
+#footer a, #footer a:visited, #footer a:link, #footer a:active  {
+    color: #fff;
+    text-decoration: none;
+}
 
 .spacer_y40 {
     height: 40px;

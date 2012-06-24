@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load webdesign %}
 
 {% block title %}Home{% endblock %}
 {% block body-attr %}{% endblock %}
@@ -13,7 +14,7 @@
     <div id="news">
       {% for item in news %}
       <strong>{{ item.title }}</strong><br>
-      <small>Posted at {{ item.time }} |
+      <small>Posted at {{ item.time }}<br>
         Tagged with
         {% for tag in item.tag.all %}
         <a href="#/news/tag/{{ tag.name }}">{{ tag.name }}</a>
@@ -25,12 +26,11 @@
         <br>
       {% endfor %}
     </div>
+    <hr>
   </div>
 
   <h1>Home</h1>
-  <p>
-    Welcome to the Internet home of Benjamin Althues
-  </p>
+  {% lorem 3 p %}
 
 {% endblock %}
 
