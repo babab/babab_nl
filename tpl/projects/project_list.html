@@ -23,7 +23,8 @@
             <th>Tags</th>
             <td>
               {% for t in p.tags.all %}
-                {{ t.name }}
+                <a href="#/projects/tag/{{ tag.name }}">
+                  {{ t.name }}</a>{% if not forloop.last %},{% endif %}
               {% endfor %}
             </td>
         {% if  p.projectrelease_set %}

@@ -22,7 +22,8 @@
     <small>Posted at {{ item.time }} |
       Tagged with
       {% for tag in item.tag.all %}
-      <a href="#/news/tag/{{ tag.name }}">{{ tag.name }}</a>
+        <a href="#/news/tag/{{ tag.name }}">
+          {{ tag.name }}</a>{% if not forloop.last %},{% endif %}
       {% endfor %}
     </small><br>
       <p>
