@@ -12,7 +12,10 @@ a:hover {
 }
 h1, h2, h3, h4 {
     margin: 0px;
-    color: #1474B4;
+    color: #A80000;
+}
+.c1 {
+    color: #A80000;
 }
 small {
     color:#666666;

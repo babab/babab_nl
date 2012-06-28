@@ -4,15 +4,14 @@
 {% block body-attr %}{% endblock %}
 
 {% block menu %}
-  <a href="/">Home</a> |
+<a href="/">Home</a> |
   Projects |
+  <a href="/tools/">Tools</a> |
   <a href="/news/">News</a>
 {% endblock %}
 
-
 {% block content %}
   <h1>Projects</h1>
-  <div class="spacer_y40"></div>
 
   <div id="projects">
     {% for p in projects %}

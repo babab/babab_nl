@@ -89,9 +89,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.webdesign',
-    'django_extensions',
     'news',
     'projects',
+    'tools',
+    'django_extensions',
 )
 
 # A sample logging configuration. The only tangible logging
