@@ -1,24 +1,13 @@
 body, #container {
-    background-color: gray;
-    font-family: Georgia, Helvetica, serif;
+    font-family: Helvetica, serif;
 }
 a, a:visited, a:link, a:active  {
-    color: #1474B4;
     text-decoration: none;
-}
-a:hover {
-    color: white;
-    background-color: #1474B4;
 }
 h1, h2, h3, h4 {
     margin: 0px;
-    color: #A80000;
-}
-.c1 {
-    color: #A80000;
 }
 small {
-    color:#666666;
     font-size:10px;
 }
 th {
@@ -46,70 +35,18 @@ th {
 }
 #copyright {
     font-weight: bold;
-    color: #fff;
     padding: 10px;
     font-size:10px;
 }
 #footer {
-    color: #fff;
     float: right;
     font-size:10px;
     padding: 10px;
 }
 #footer a, #footer a:visited, #footer a:link, #footer a:active  {
-    color: #fff;
     text-decoration: none;
 }
 
 .spacer_y40 {
     height: 40px;
-}
-
-/*
- * The style rules below are rendered at http://www.spiffycorners.com/
- */
-.rounded{
-    display:block
-}
-.rounded *{
-    display:block;
-    height:1px;
-    overflow:hidden;
-    font-size:.01em;
-    background:#ffffff
-}
-.rounded1{
-    margin-left:3px;
-    margin-right:3px;
-    padding-left:1px;
-    padding-right:1px;
-    border-left:1px solid #79afd4;
-    border-right:1px solid #79afd4;
-    background:#c4dcec
-}
-.rounded2{
-    margin-left:1px;
-    margin-right:1px;
-    padding-right:1px;
-    padding-left:1px;
-    border-left:1px solid #2b81bb;
-    border-right:1px solid #2b81bb;
-    background:#d2e4f0
-}
-.rounded3{
-    margin-left:1px;
-    margin-right:1px;
-    border-left:1px solid #d2e4f0;
-    border-right:1px solid #d2e4f0;
-}
-.rounded4{
-    border-left:1px solid #79afd4;
-    border-right:1px solid #79afd4
-}
-.rounded5{
-    border-left:1px solid #c4dcec;
-    border-right:1px solid #c4dcec
-}
-.roundedfg{
-    background:#ffffff
 }

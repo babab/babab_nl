@@ -1,0 +1,48 @@
+/*
+ * The style rules below are rendered at http://www.spiffycorners.com/
+ */
+.rounded{
+    display:block
+}
+.rounded *{
+    display:block;
+    height:1px;
+    overflow:hidden;
+    font-size:.01em;
+    background:#ffffff
+}
+.rounded1{
+    margin-left:3px;
+    margin-right:3px;
+    padding-left:1px;
+    padding-right:1px;
+    border-left:1px solid #79afd4;
+    border-right:1px solid #79afd4;
+    background:#c4dcec
+}
+.rounded2{
+    margin-left:1px;
+    margin-right:1px;
+    padding-right:1px;
+    padding-left:1px;
+    border-left:1px solid #2b81bb;
+    border-right:1px solid #2b81bb;
+    background:#d2e4f0
+}
+.rounded3{
+    margin-left:1px;
+    margin-right:1px;
+    border-left:1px solid #d2e4f0;
+    border-right:1px solid #d2e4f0;
+}
+.rounded4{
+    border-left:1px solid #79afd4;
+    border-right:1px solid #79afd4
+}
+.rounded5{
+    border-left:1px solid #c4dcec;
+    border-right:1px solid #c4dcec
+}
+.roundedfg{
+    background:#ffffff
+}
