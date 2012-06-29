@@ -50,3 +50,13 @@ th {
 .spacer_y40 {
     height: 40px;
 }
+.fullwidth {
+    width: 100%;
+}
+.floatr {
+    float: right;
+}
+
+#rot13 {
+    height: 250px;
+}
