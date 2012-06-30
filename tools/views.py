@@ -1,14 +1,16 @@
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 import tools
 
 def index(request):
-    r = {'tools': tools.tools}
-    return render_to_response('tools/index.html', r)
+    data = {'tools': tools.tools}
+    return render_to_response('tools/index.html', data)
 
 def rot13(request):
-    if request.GET:
-        r = {'text': request.GET['text'].encode('rot13') }
+    if request.POST:
+        data = {'text': request.POST['text'].encode('rot13') }
     else:
-        r = {'text': ''}
+        data = {'text': ''}
 
-    return render_to_response('tools/rot13.html', r)
+    context = RequestContext(request)
+    return render_to_response('tools/rot13.html', data, context)

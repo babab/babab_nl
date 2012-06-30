@@ -37,7 +37,8 @@
       and is often cited as a canonical example of weak encryption."
     </em>
   </blockquote>
-  <form>
+  <form method="post" action="/rot13/">
+    {% csrf_token %}
     <textarea id="rot13" name="text" class="fullwidth">{{ text }}</textarea>
     <input type="submit" id="rot13_submit" value="Encode/Decode">
   </form>
