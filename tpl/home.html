@@ -1,14 +1,12 @@
 {% extends "base.html" %}
+{% load menu %}
 {% load webdesign %}
 
 {% block title %}Home{% endblock %}
 {% block body-attr %}{% endblock %}
 
 {% block menu %}
-  Home |
-  <a href="/projects/">Projects</a> |
-  <a href="/tools/">Tools</a> |
-  <a href="/news/">News</a>
+  {% menu home %}
 {% endblock %}
 {% block content %}
   <div id="newsfloater">

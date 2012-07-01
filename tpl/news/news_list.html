@@ -1,13 +1,11 @@
 {% extends "base.html" %}
+{% load menu %}
 
 {% block title %}News{% endblock %}
 {% block body-attr %}{% endblock %}
 
 {% block menu %}
-  <a href="/">Home</a> |
-  <a href="/projects/">Projects</a> |
-  <a href="/tools/">Tools</a> |
-  News
+  {% menu news %}
 {% endblock %}
 
 
