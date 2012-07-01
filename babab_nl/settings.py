@@ -94,7 +94,6 @@ INSTALLED_APPS = (
     'news',
     'projects',
     'tools',
-    'django_extensions',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
