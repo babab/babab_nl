@@ -22,6 +22,7 @@ USE_I18N        = settings_local.USE_I18N
 USE_L10N        = settings_local.USE_L10N
 USE_TZ          = settings_local.USE_TZ
 SECRET_KEY      = settings_local.SECRET_KEY
+INSTALLED_APPS_TAIL = settings_local.INSTALLED_APPS_TAIL
 
 MANAGERS = ADMINS
 
@@ -83,7 +84,7 @@ TEMPLATE_DIRS = (
         '%s/tpl' % DEPLOY_PATH
 )
 
-INSTALLED_APPS = (
+INSTALLED_APPS_HEAD = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -95,6 +96,8 @@ INSTALLED_APPS = (
     'projects',
     'tools',
 )
+
+INSTALLED_APPS = INSTALLED_APPS_HEAD + INSTALLED_APPS_TAIL
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',

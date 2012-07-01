@@ -17,6 +17,11 @@ DATABASES = {
     }
 }
 
+INSTALLED_APPS_TAIL = (
+    #'django_extensions',
+    #'gunicorn',
+)
+
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'ldw96=r0wm+y*d$i^-a&amp;%jdhi+8+f3v#f2yq8yv8%-vdtm(7g9'
 
