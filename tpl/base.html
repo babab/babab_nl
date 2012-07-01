@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/static/style.css">
-    <link rel="stylesheet" href="/static/rounded.css">
-    <link rel="stylesheet" href="/static/colors-default.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}style.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}rounded.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}colors-default.css">
     <title>{% block title %}{% endblock %} at babab.nl</title>
   </head>
   <body {% block body-attr %}{% endblock %}>
