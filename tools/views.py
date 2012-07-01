@@ -4,7 +4,8 @@ import tools
 
 def index(request):
     data = {'tools': tools.tools}
-    return render_to_response('tools/index.html', data)
+    context = RequestContext(request)
+    return render_to_response('tools/index.html', data, context)
 
 def rot13(request):
     if request.POST:
