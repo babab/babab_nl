@@ -48,3 +48,16 @@ def md5(request):
 
     context = RequestContext(request)
     return render_to_response('tools/md5.html', data, context)
+
+def sha1(request):
+    data = {'text': ''}
+
+    if request.POST:
+        text = request.POST['text']
+
+        if text:
+            digest = hashlib.sha1(text).hexdigest()
+            data = {'text': text, 'digest': digest }
+
+    context = RequestContext(request)
+    return render_to_response('tools/sha1.html', data, context)

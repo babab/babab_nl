@@ -1,0 +1,23 @@
+{% extends "tools/index.html" %}
+
+{% block title %}sha1 hash/checksum{% endblock %}
+
+{% block content %}
+  <p class="floatr">
+    <a href="/tools/">Go back to all tools</a>
+  </p>
+  <h1>sha1 hash/checksum</h1>
+
+  {% if digest %}
+    <pre id="hash">Hash: <strong>{{ digest }}</strong></pre>
+  {% endif %}
+
+  <form method="post" action="/sha1/">
+    {% csrf_token %}
+    <textarea id="sha1" name="text" class="fullwidth">{{ text }}</textarea>
+    <input type="submit" id="sha1_submit" value="Hash">
+  </form>
+
+{% endblock %}
+
+{# vim: set et ts=2 sw=2 sts=2 ft=htmldjango: #}
