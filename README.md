@@ -1,16 +1,19 @@
-Personal website of Benjamin Althues
-******************************************************************************
+# Personal website of Benjamin Althues
 
 My new website, written using Django.
 
-Features
-==============================================================================
+## Features
 
- * News application
- * Software projects application
+* News application
+* Software projects application
 
-License
-==============================================================================
+### Tools
+
+* rot13 - Rotate text 13 chars.
+* sha1 - Create sha1 hash/checksum from text
+* md5 - Create md5 hash/checksum from text
+
+## License
 
 Copyright (C) 2012 Benjamin Althues
 
