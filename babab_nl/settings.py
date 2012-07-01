@@ -7,6 +7,8 @@ except ImportError:
     print 'Move example.settings_local.py -> settings_local.py and edit it'
     sys.exit(1)
 
+BABAB_VERSION = 'v5.0-dev'
+
 DEPLOY_PATH = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 DEBUG           = settings_local.DEBUG
@@ -93,6 +95,17 @@ INSTALLED_APPS = (
     'projects',
     'tools',
     'django_extensions',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
+    'babab_nl.context_processors.platform_version_info',
 )
 
 # A sample logging configuration. The only tangible logging
