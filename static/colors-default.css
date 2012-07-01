@@ -28,13 +28,14 @@ small {
     color:#666666;
 }
 #footer a, #footer a:visited, #footer a:link, #footer a:active,
-#copyright, #footer, a:hover {
+#copyright, #footer {
     color: #FFFFFF;
-}
-a:hover {
-    background-color: #1474B4;
 }
 a, a:visited, a:link, a:active
 {
     color: #1474B4;
+}
+a:hover {
+    color: #FFFFFF;
+    background-color: #1474B4;
 }
