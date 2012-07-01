@@ -74,6 +74,9 @@ th {
     float: right;
 }
 
-#rot13 {
+#rot13, #md5 {
     height: 250px;
+}
+#hash {
+    padding: 20px;
 }

@@ -16,8 +16,10 @@
 #    misrepresented as being the original software.
 # 3. This notice may not be removed or altered from any source distribution.
 
+import hashlib
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+
 import tools
 
 def index(request):
@@ -26,10 +28,23 @@ def index(request):
     return render_to_response('tools/index.html', data, context)
 
 def rot13(request):
+    data = {'text': ''}
+
     if request.POST:
         data = {'text': request.POST['text'].encode('rot13') }
-    else:
-        data = {'text': ''}
 
     context = RequestContext(request)
     return render_to_response('tools/rot13.html', data, context)
+
+def md5(request):
+    data = {'text': ''}
+
+    if request.POST:
+        text = request.POST['text']
+
+        if text:
+            digest = hashlib.md5(text).hexdigest()
+            data = {'text': text, 'digest': digest }
+
+    context = RequestContext(request)
+    return render_to_response('tools/md5.html', data, context)

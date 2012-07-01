@@ -30,5 +30,6 @@ urlpatterns = patterns('',
     url(r'^projects/$', include(projects.urls)),
     url(r'^tools/$', 'tools.views.index', name='tools_index'),
     url(r'^rot13/$', 'tools.views.rot13', name='rot13'),
+    url(r'^md5/$', 'tools.views.md5', name='md5'),
     url(r'^admin/', include(admin.site.urls)),
 )
