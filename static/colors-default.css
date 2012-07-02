@@ -22,7 +22,7 @@ body, #container {
     background-color: gray;
 }
 h1, h2, h3, h4, .c1 {
-    color: #A80000;
+    color: #B32D00;
 }
 small {
     color:#666666;
@@ -33,14 +33,14 @@ small {
 }
 a, a:visited, a:link, a:active
 {
-    color: #1474B4;
+    color: #002DB3;
 }
 a:hover {
     color: #FFFFFF;
-    background-color: #1474B4;
+    background-color: #002DB3;
 }
 
 #hash {
-    background-color: #1474B4;
+    background-color: #002DB3;
     color: #FFFFFF;
 }
