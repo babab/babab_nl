@@ -14,35 +14,63 @@
   <div id="projects">
     {% for p in projects %}
       <h2>{{ p.name }}</h2>
-      <small>
-        <table>
-          <tr>
-            <th>Tags</th>
-            <td>
-              {% for t in p.tags.all %}
-                <a href="#/projects/tag/{{ tag.name }}">
-                  {{ t.name }}</a>{% if not forloop.last %},{% endif %}
-              {% endfor %}
-            </td>
-        {% if  p.projectrelease_set %}
-          <table>
-            <tr>
-              <th>Version</th>
-              <th>Release date</th>
-            </tr>
-            {% for rel in p.projectrelease_set.all %}
+
+      {% if  p.projectrelease_set.all %}
+        <div class="floatr">
+          <small>
+            <h3>Release(s)</h3>
+            <table>
               <tr>
-                <td>
-                  {{ rel.name }}
-                </td>
-                <td>
-                  {{ rel.date }}
-                </td>
+                <th>Version</th>
+                <th>Release date</th>
               </tr>
-            {% endfor %}
-          </table>
-        {% endif %}
+              {% for rel in p.projectrelease_set.all %}
+                <tr>
+                  <td>
+                    {{ rel.name }}
+                  </td>
+                  <td>
+                    {{ rel.date }}
+                  </td>
+                </tr>
+              {% endfor %}
+            </table>
+          </small>
+        </div>
+      {% endif %}
+
+      {% if  p.projectlink_set.all %}
+        <div class="floatr">
+          <small>
+            <h3>Project link(s)</h3>
+            <table>
+              <tr>
+                <th>Name</th>
+                <th>URL</th>
+              </tr>
+              {% for link in p.projectlink_set.all %}
+                <tr>
+                  <td>
+                    {{ link.name }}
+                  </td>
+                  <td>
+                    <a href="{{ link.url }}">{{ link.url }}</a>
+                  </td>
+                </tr>
+              {% endfor %}
+            </table>
+          </small>
+        </div>
+      {% endif %}
+
+      <small>
+        Tags:
+        {% for t in p.tags.all %}
+          <a href="#/projects/tag/{{ tag.name }}">
+            {{ t.name }}</a>{% if not forloop.last %},{% endif %}
+        {% endfor %}
       </small>
+
       <p>
         {{ p.description }}
       </p>

@@ -18,8 +18,9 @@
 
 from django.contrib import admin
 
-from projects.models import Project, ProjectRelease, ProjectTag
+from projects.models import Project, ProjectRelease, ProjectTag, ProjectLink
 
 admin.site.register(Project)
 admin.site.register(ProjectRelease)
 admin.site.register(ProjectTag)
+admin.site.register(ProjectLink)

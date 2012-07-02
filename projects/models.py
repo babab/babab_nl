@@ -38,3 +38,7 @@ class ProjectRelease(Base):
 
 class ProjectTag(Base):
     pass
+
+class ProjectLink(Base):
+    project = models.ForeignKey(Project)
+    url = models.URLField()

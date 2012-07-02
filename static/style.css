@@ -72,6 +72,7 @@ th {
 }
 .floatr {
     float: right;
+    margin-left: 20px;
 }
 
 #rot13, #md5, #sha1 {
