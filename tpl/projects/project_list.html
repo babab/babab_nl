@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load markup %}
 {% load menu %}
 
 {% block title %}Projects{% endblock %}
@@ -71,9 +72,9 @@
         {% endfor %}
       </small>
 
-      <p>
-        {{ p.description }}
-      </p>
+      <div>
+        {{ p.description|markdown }}
+      </div>
       <hr>
     {% endfor %}
   </div>

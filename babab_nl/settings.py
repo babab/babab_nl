@@ -110,6 +110,7 @@ INSTALLED_APPS_HEAD = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.webdesign',
+    'django.contrib.markup',
     'navigation',
     'news',
     'projects',
