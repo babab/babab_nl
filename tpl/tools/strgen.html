@@ -1,0 +1,26 @@
+{% extends "tools/index.html" %}
+
+{% block title %}String Generator tool{% endblock %}
+
+{% block content %}
+  <p class="floatr">
+    <a href="/tools/">Go back to all tools</a>
+  </p>
+  <h1>String Generator tool</h1>
+  <p>
+    Use this tool to create a random string.
+  </p>
+
+  {% if result %}
+    <pre id="hash">Random string: <strong>{{ result }}</strong></pre>
+  {% endif %}
+
+  <form method="post" action="/strgen/">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" id="strgen_submit" value="Get random string">
+  </form>
+
+{% endblock %}
+
+{# vim: set et ts=2 sw=2 sts=2 ft=htmldjango: #}

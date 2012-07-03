@@ -21,6 +21,8 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 
 import tools
+from forms import strgenForm
+from string_generator import stringGenerator
 
 def index(request):
     data = {'tools': tools.tools}
@@ -61,3 +63,20 @@ def sha1(request):
 
     context = RequestContext(request)
     return render_to_response('tools/sha1.html', data, context)
+
+def strgen(request):
+    chars = ''
+    result = ''
+
+    if request.method == 'POST':
+        form = strgenForm(request.POST)
+        if form.is_valid():
+            strlen = form.cleaned_data['number_of_chars']
+            charOptions = form.cleaned_data['type_of_chars']
+            result = stringGenerator(charOptions, strlen)
+    else:
+        form = strgenForm()
+
+    data = {'form': form, 'chars': chars, 'result': result}
+    context = RequestContext(request)
+    return render_to_response('tools/strgen.html', data, context)

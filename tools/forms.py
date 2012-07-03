@@ -16,22 +16,16 @@
 #    misrepresented as being the original software.
 # 3. This notice may not be removed or altered from any source distribution.
 
-from django.conf.urls import patterns, include, url
-from django.contrib import admin
+from django import forms
+from django.forms.widgets import CheckboxSelectMultiple
 
-import news.urls
-import projects.urls
+charOptions = (('1', 'Range a-z'),
+               ('2', 'Range A-Z'),
+               ('3', 'Range 0-9'),
+               ('4', 'Special chars'),
+               ('5', 'Include !,1,l,i,I,0,o,O'))
 
-admin.autodiscover()
-
-urlpatterns = patterns('',
-    url(r'^$', 'babab_nl.views.index', name='index'),
-    url(r'^news/$', include(news.urls)),
-    url(r'^projects/$', include(projects.urls)),
-    url(r'^tools/$', 'tools.views.index', name='tools_index'),
-    url(r'^rot13/$', 'tools.views.rot13', name='rot13'),
-    url(r'^md5/$', 'tools.views.md5', name='md5'),
-    url(r'^sha1/$', 'tools.views.sha1', name='sha1'),
-    url(r'^strgen/$', 'tools.views.strgen', name='strgen'),
-    url(r'^admin/', include(admin.site.urls)),
-)
+class strgenForm(forms.Form):
+    number_of_chars = forms.IntegerField(min_value=2,max_value=256)
+    type_of_chars = forms.MultipleChoiceField(choices=charOptions,
+            widget=CheckboxSelectMultiple)

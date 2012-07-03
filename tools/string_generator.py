@@ -16,22 +16,24 @@
 #    misrepresented as being the original software.
 # 3. This notice may not be removed or altered from any source distribution.
 
-from django.conf.urls import patterns, include, url
-from django.contrib import admin
+import random
 
-import news.urls
-import projects.urls
+specialchars = '@#$%^*()_-=+/?.,~[]{}|;:'
+strippedchars = '!1liI0oO'
 
-admin.autodiscover()
+def stringGenerator(charOptions, strLength=20):
+    chars = ''
+    for opt in charOptions:
+        if opt == '1':
+            chars += 'abcdefhjkmnpqrstuvwxyz'
+        if opt == '2':
+            chars += 'ABCDEFHJKMNPQRSTUVWXYZ'
+        if opt == '3':
+            chars += '0123456789'
+        if opt == '4':
+            chars += specialchars
+        if opt == '5':
+            chars += strippedchars
 
-urlpatterns = patterns('',
-    url(r'^$', 'babab_nl.views.index', name='index'),
-    url(r'^news/$', include(news.urls)),
-    url(r'^projects/$', include(projects.urls)),
-    url(r'^tools/$', 'tools.views.index', name='tools_index'),
-    url(r'^rot13/$', 'tools.views.rot13', name='rot13'),
-    url(r'^md5/$', 'tools.views.md5', name='md5'),
-    url(r'^sha1/$', 'tools.views.sha1', name='sha1'),
-    url(r'^strgen/$', 'tools.views.strgen', name='strgen'),
-    url(r'^admin/', include(admin.site.urls)),
-)
+    return ''.join(random.choice(chars) for x in range(strLength))
+

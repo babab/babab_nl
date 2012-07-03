@@ -1,6 +1,6 @@
 # Personal website of Benjamin Althues
 
-My new website, written using Django.
+My new website, written in Django.
 
 ## Features
 
@@ -12,6 +12,7 @@ My new website, written using Django.
 * rot13 - Rotate text 13 chars.
 * sha1 - Create sha1 hash/checksum from text
 * md5 - Create md5 hash/checksum from text
+* strgen - String Generator tool
 
 ## License
 
