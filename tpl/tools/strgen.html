@@ -17,7 +17,9 @@
 
   <form method="post" action="/strgen/">
     {% csrf_token %}
-    {{ form.as_p }}
+    <div id="strgen">
+      {{ form.as_p }}
+    </div>
     <input type="submit" id="strgen_submit" value="Get random string">
   </form>
 
