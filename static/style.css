@@ -82,10 +82,19 @@ th {
     padding: 20px;
 }
 
-#strgen ul {
+#strgen ul, #strgen_info ul {
     list-style-type: none;
     padding-left: 0px;
 }
 #strgen #id_number_of_chars {
     width: 30px;
+}
+kbd {
+    font-weight: bold;
+    padding: 2px 4px 2px 4px;
+}
+input[type="submit"] {
+    font-weight: bold;
+    padding: 2px 20px 2px 20px;
+
 }
