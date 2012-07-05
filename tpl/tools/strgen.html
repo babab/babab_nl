@@ -15,6 +15,21 @@
     <pre id="hash">Random string: <strong>{{ result }}</strong></pre>
   {% endif %}
 
+  <div id="strgen_info" class="floatr">
+      In the a-z, A-Z and 0-9 ranges the following characters are not included
+      by default.
+      <ul>
+        <li><kbd>!</kbd> exclamation mark</li>
+        <li><kbd>1</kbd> one</li>
+        <li><kbd>l</kbd> lowercase L</li>
+        <li><kbd>i</kbd> lowercase I</li>
+        <li><kbd>I</kbd> uppercase I</li>
+        <li><kbd>0</kbd> zero</li>
+        <li><kbd>o</kbd> lowercase O</li>
+        <li><kbd>O</kbd> uppercase O</li>
+      </ul>
+  </div>
+
   <form method="post" action="/strgen/">
     {% csrf_token %}
     <div id="strgen">
@@ -22,6 +37,34 @@
     </div>
     <input type="submit" id="strgen_submit" value="Get random string">
   </form>
+
+    <p>
+      Special chars are:
+      <kbd>@</kbd>
+      <kbd>#</kbd>
+      <kbd>$</kbd>
+      <kbd>%</kbd>
+      <kbd>^</kbd>
+      <kbd>*</kbd>
+      <kbd>(</kbd>
+      <kbd>)</kbd>
+      <kbd>_</kbd>
+      <kbd>-</kbd>
+      <kbd>=</kbd>
+      <kbd>+</kbd>
+      <kbd>/</kbd>
+      <kbd>?</kbd>
+      <kbd>.</kbd>
+      <kbd>,</kbd>
+      <kbd>~</kbd>
+      <kbd>[</kbd>
+      <kbd>]</kbd>
+      <kbd>{</kbd>
+      <kbd>}</kbd>
+      <kbd>|</kbd>
+      <kbd>;</kbd>
+      <kbd>:</kbd>
+    </p>
 
 {% endblock %}
 
