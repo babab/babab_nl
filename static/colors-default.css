@@ -32,7 +32,7 @@ kbd {
     border-color: #002DB3;
 }
 #footer a, #footer a:visited, #footer a:link, #footer a:active,
-#copyright, #footer, a:hover, #hash, kbd {
+#copyright, #footer, kbd {
     color: #FFFFFF;
 }
 a, a:visited, a:link, a:active
@@ -40,5 +40,6 @@ a, a:visited, a:link, a:active
     color: #002DB3;
 }
 a:hover, #hash {
+    color: #FFFFFF;
     background-color: #002DB3;
 }
