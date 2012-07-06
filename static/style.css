@@ -74,6 +74,9 @@ th {
     float: right;
     margin-left: 20px;
 }
+.errorlist {
+    font-weight: bold;
+}
 
 #rot13, #md5, #sha1 {
     height: 250px;

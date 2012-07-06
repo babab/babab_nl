@@ -43,3 +43,6 @@ a:hover, #hash {
     color: #FFFFFF;
     background-color: #002DB3;
 }
+.errorlist {
+    color: red;
+}
