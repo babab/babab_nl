@@ -81,11 +81,26 @@ img {
     font-size:10px;
     padding: 10px;
 }
-#footer img {
+#footer a {
+    margin-left: 20px;
+}
+.footerlink {
+    background:url("80x15sprite.png") no-repeat 0 0;
+    height:15px;
+    width:80px;
+    display:inline-block;
     vertical-align: bottom;
-    padding-left: 20px;
+}
+#footerlink_django {
+    background-position:0 -15px
+}
+#footerlink_python {
+    background-position:0 -30px
 }
 
+.nodisplay {
+    display: none;
+}
 .spacery {
     height: 20px;
 }
