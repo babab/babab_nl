@@ -24,8 +24,15 @@ body, #container {
 #header,#content {
     background-color: #FFFFFF;
 }
-h1, h2, h3, h4, .c1 {
+h1, h2, h3, h4, hr, .c1 {
     color: #B32D00;
+}
+hr {
+    background-color: #B32D00;
+    border-color: #B32D00;
+}
+hr:after {
+    background-color: white;
 }
 small {
     color: #666666;

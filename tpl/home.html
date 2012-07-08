@@ -22,10 +22,9 @@
         <p>
         {{ item.text }}
         </p>
-        <br>
+        {% if not forloop.last %}<hr>{% endif %}
       {% endfor %}
     </div>
-    <hr>
   </div>
 
   <h1>Home</h1>
@@ -37,6 +36,7 @@
     The site itself is written in Django and completely open-source.
     You can use (components of) the code as long as you respect the
     zlib/libpng style license.
+    <br>
     <a href="https://github.com/babab/babab_nl/">
       Visit the github project page.
     </a>
