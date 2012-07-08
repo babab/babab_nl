@@ -22,18 +22,19 @@ class Skin(object):
                  2: 'Dark' }
 
     def __init__(self, request):
+        self.active_skin = 1
+
         if request.GET:
             request.session['skin'] = request.GET['skin']
 
-        try:
-            skin = int(request.session['skin'])
-        except ValueError:
-            skin = 1
+        if request.session['skin']:
+            try:
+                skin = int(request.session['skin'])
+            except ValueError:
+                skin = 1
 
-        if skin in range(1, 3):
-            self.active_skin = skin
-        else:
-            self.active_skin = 1
+            if skin in range(1, 3):
+                self.active_skin = skin
 
     def getActiveSkinName(self):
         return self.skindict[self.active_skin].lower()
