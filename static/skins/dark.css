@@ -25,7 +25,7 @@
  * Color 02: gray
  * Color 03: #333333
  * Color 11: #000000
- * Color 12: #002DB3
+ * Color 12: #FFFFFF
  * Color 50: red
  */
 
@@ -49,8 +49,8 @@ small {
     color: #333333;
 }
 kbd {
-    background-color: #002DB3;
-    border-color: #002DB3;
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
 }
 #footer a, #footer a:visited, #footer a:link, #footer a:active,
 #copyright, #footer, kbd {
@@ -58,11 +58,11 @@ kbd {
 }
 a, a:visited, a:link, a:active
 {
-    color: #002DB3;
+    color: #FFFFFF;
 }
 a:hover, #hash {
     color: gray;
-    background-color: #002DB3;
+    background-color: #FFFFFF;
 }
 .errorlist {
     color: red;
