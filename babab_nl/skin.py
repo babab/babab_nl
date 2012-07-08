@@ -19,7 +19,8 @@
 class Skin(object):
     active_skin = None
     skindict = { 1: 'Default',
-                 2: 'Dark' }
+                 2: 'Dark',
+                 3: 'Ugly' }
 
     def __init__(self, request):
         self.active_skin = 1
@@ -32,7 +33,7 @@ class Skin(object):
         except (KeyError, ValueError):
             skin = 1
 
-        if skin in range(1, 3):
+        if skin in range(1, 4):
             self.active_skin = skin
 
     def getActiveSkinName(self):
