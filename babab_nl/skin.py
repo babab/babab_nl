@@ -16,17 +16,24 @@
 #    misrepresented as being the original software.
 # 3. This notice may not be removed or altered from any source distribution.
 
-from django import get_version as django_version
-from sys import version as python_version
+class Skin(object):
+    active_skin = None
+    skindict = { 1: 'Default',
+                 2: 'Dark' }
 
-from settings import BABAB_VERSION as babab_version
-from skin import Skin
+    def __init__(self, request):
+        if request.GET:
+            request.session['skin'] = request.GET['skin']
 
-def platform_version_info(request):
-    return { 'version_babab': babab_version,
-             'version_python': python_version.split()[0],
-             'version_django': django_version() }
+        try:
+            skin = int(request.session['skin'])
+        except ValueError:
+            skin = 1
 
-def active_skin(request):
-    return {'skin': Skin(request)}
+        if skin in range(1, 3):
+            self.active_skin = skin
+        else:
+            self.active_skin = 1
 
+    def getActiveSkinName(self):
+        return self.skindict[self.active_skin].lower()

@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ STATIC_URL }}style.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}colors-default.css">
+    <link rel="stylesheet"
+          href="{{ STATIC_URL }}skins/{{ skin.getActiveSkinName }}.css">
     <title>{% block title %}{% endblock %} at babab.nl</title>
   </head>
   <body {% block body-attr %}{% endblock %}>

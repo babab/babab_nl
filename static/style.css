@@ -133,7 +133,7 @@ kbd {
     font-weight: bold;
     padding: 2px 4px 2px 4px;
 }
-input[type="submit"] {
+input[type="submit"], select {
     font-weight: bold;
     padding: 2px 20px 2px 20px;
 

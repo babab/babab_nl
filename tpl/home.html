@@ -25,6 +25,22 @@
         {% if not forloop.last %}<hr>{% endif %}
       {% endfor %}
     </div>
+    <hr>
+    <div class="spacery"></div>
+    <div>
+      <strong>Skin selector</strong>
+      <form id="skinform">
+        <select name="skin">
+          {% for val, name in skin.skindict.iteritems %}
+          <option value="{{ val }}"
+            {% if val == skin.active_skin %}
+              selected="selected"
+            {% endif %}>{{ name }}</option>
+          {% endfor %}
+        </select>
+        <input type="submit" value="Skin">
+      </form>
+    </div>
   </div>
 
   <h1>Home</h1>
