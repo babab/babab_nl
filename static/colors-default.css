@@ -21,6 +21,9 @@
 body, #container {
     background-color: gray;
 }
+#header,#content {
+    background-color: #FFFFFF;
+}
 h1, h2, h3, h4, .c1 {
     color: #B32D00;
 }

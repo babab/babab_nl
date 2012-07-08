@@ -3,44 +3,23 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ STATIC_URL }}style.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}rounded.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}colors-default.css">
     <title>{% block title %}{% endblock %} at babab.nl</title>
   </head>
   <body {% block body-attr %}{% endblock %}>
     <div id="container">
-      <div>
-        <b class="rounded"><b class="rounded1"><b></b></b>
-        <b class="rounded2"><b></b></b><b class="rounded3"></b>
-        <b class="rounded4"></b><b class="rounded5"></b></b>
-        <div class="roundedfg">
-          <div id="header">
-            <strong class="c1">babab.nl</strong>
-            <div id="menu">
-              {% block menu %}
-              {% endblock %}
-            </div>
-          </div>
+      <div id="header">
+        <strong class="c1">babab.nl</strong>
+        <div id="menu">
+          {% block menu %}
+          {% endblock %}
         </div>
-        <b class="rounded"><b class="rounded5"></b><b class="rounded4"></b>
-        <b class="rounded3"></b><b class="rounded2"><b></b></b>
-        <b class="rounded1"><b></b></b></b>
       </div>
       <div class="spacer_y40"></div>
-      <div>
-        <b class="rounded"><b class="rounded1"><b></b></b>
-        <b class="rounded2"><b></b></b><b class="rounded3"></b>
-        <b class="rounded4"></b><b class="rounded5"></b></b>
-        <div class="roundedfg">
-          <div id="content">
-            {% block content %}
-              Welcome to the Internet home of Benjamin Althues
-            {% endblock %}
-          </div>
-        </div>
-        <b class="rounded"><b class="rounded5"></b><b class="rounded4"></b>
-        <b class="rounded3"></b><b class="rounded2"><b></b></b>
-        <b class="rounded1"><b></b></b></b>
+      <div id="content">
+        {% block content %}
+          Welcome to the Internet home of Benjamin Althues
+        {% endblock %}
       </div>
       <div id="footer">
         <a href="http://github.com/babab/babab_nl/">
