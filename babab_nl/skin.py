@@ -27,14 +27,13 @@ class Skin(object):
         if request.GET:
             request.session['skin'] = request.GET['skin']
 
-        if request.session['skin']:
-            try:
-                skin = int(request.session['skin'])
-            except ValueError:
-                skin = 1
+        try:
+            skin = int(request.session['skin'])
+        except (KeyError, ValueError):
+            skin = 1
 
-            if skin in range(1, 3):
-                self.active_skin = skin
+        if skin in range(1, 3):
+            self.active_skin = skin
 
     def getActiveSkinName(self):
         return self.skindict[self.active_skin].lower()
