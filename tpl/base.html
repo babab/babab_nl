@@ -2,42 +2,60 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ STATIC_URL }}style.css">
-    <link rel="stylesheet"
-          href="{{ STATIC_URL }}skins/{{ skin.getActiveSkinName }}.css">
+    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css"
+          rel="stylesheet">
     <title>{% block title %}{% endblock %} at babab.nl</title>
   </head>
   <body {% block body-attr %}{% endblock %}>
-    <div id="container">
-      <div id="header">
-        <strong class="c1">babab.nl</strong>
-        <div id="menu">
-          {% block menu %}
-          {% endblock %}
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="#">babab.nl</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              Personal website of Benjamin Althues
+            </p>
+            <ul class="nav nav-pills">
+              {% block menu %}
+              {% endblock %}
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="spacery"></div>
-      <div id="content">
-        {% block content %}
-          Welcome to the Internet home of Benjamin Althues
-        {% endblock %}
-      </div>
-      <div id="footer">
-        <a href="http://github.com/babab/babab_nl/">
-          <span id="footerlink_babab" class="footerlink"></span>
-          <span class="nodisplay">babab.nl</span>
-          <strong>{{ version_babab }}</strong></a>
-        <a href="http://djangoproject.com/">
-          <span id="footerlink_django" class="footerlink"></span>
-          <span class="nodisplay">Django</span>
-          <strong>{{ version_django }}</strong></a>
-        <a href="http://python.org/">
-          <span id="footerlink_python" class="footerlink"></span>
-          <span class="nodisplay">Python</span>
-          <strong>{{ version_python }}</strong></a>
-      </div>
-      <div id="copyright">Copyright &copy; 2012 Benjamin Althues</div>
     </div>
+    <hr>
+    {% block content %}
+    {% endblock %}
+    <hr>
+    <div class="navbar navbar-inverse">
+      <div class="row-fluid">
+        <div class="span4">
+          <p>
+            Copyright &copy; Benjamin Althues 2012
+          </p>
+        </div>
+        <div class="span3 pull-right">
+          <p>
+            <a href="http://github.com/babab/babab_nl/">
+              <span id="footerlink_babab" class="footerlink"></span>
+              <span class="nodisplay">babab.nl</span>
+            </a>
+            <strong>{{ version_babab }}</strong>
+            <a href="http://djangoproject.com/">
+              <span id="footerlink_django" class="footerlink"></span>
+              <span class="nodisplay">Django</span>
+            </a>
+            <strong>{{ version_django }}</strong>
+            <a href="http://python.org/">
+              <span id="footerlink_python" class="footerlink"></span>
+              <span class="nodisplay">Python</span>
+            </a>
+            <strong>{{ version_python }}</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
 

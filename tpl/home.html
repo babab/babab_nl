@@ -4,90 +4,121 @@
 {% block title %}Home{% endblock %}
 {% block body-attr %}{% endblock %}
 
-{% block menu %}
-  {% menu home %}
-{% endblock %}
+{% block menu %} {% menu home %} {% endblock %}
+
 {% block content %}
-  <div id="newsfloater">
-    <div id="news">
-      {% for item in news %}
-      <strong>{{ item.title }}</strong><br>
-      <small>Posted at {{ item.time }}<br>
-        Tagged with
-        {% for tag in item.tag.all %}
-          <a href="#/news/tag/{{ tag.name }}">
-            {{ tag.name }}</a>{% if not forloop.last %},{% endif %}
-        {% endfor %}
-      </small><br>
-        <p>
-        {{ item.text }}
-        </p>
-        {% if not forloop.last %}<hr>{% endif %}
-      {% endfor %}
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3">
+        <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+            <li class="nav-header">Projects</li>
+            <li><a href="http://dispass.babab.nl">DisPass</a></li>
+            <li class="nav-header">Tools</li>
+            <li><a href="/strgen/">strgen</a></li>
+            <li><a href="/rot13/">rot13</a></li>
+            <li><a href="/sha1/">sha1</a></li>
+            <li><a href="/md5/">md5</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="span9">
+        <div class="hero-unit">
+          <h1>babab.nl</h1>
+          <p>
+            At this site you can find (links to) some software projects and
+            also some (geeky) tools.
+            The site has a <a href="http://www.djangoproject.com">Django</a>
+            backend, <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
+            frontend and is fully open-source. You can use
+            (components of) the code as long as you respect the
+            <a href="https://raw.github.com/babab/babab_nl/master/LICENSE">
+            zlib/libpng</a>
+            style license.
+          </p>
+          <p>
+            <a class="btn"
+              href="https://github.com/babab/babab_nl/">
+              Visit the github project page
+            </a>
+          </p>
+        </div>
+        <div class="row-fluid">
+          <div class="span8">
+            <h2>Projects</h2>
+            <h3>DisPass</h3>
+            <p>
+              DisPass is a passphrase generator for GNU/Linux, *BSD, MacOS X
+              and Windows. It enables you to generate unique passphrases
+              formed from a master password and a label, helping you get rid
+              of the bad habit of using a single password for multiple
+              websites.
+            <p>
+            </p>
+              When using a different passphrase for every website,
+              the chance of abuse of your password on other sites (when a
+              website leaks it) is eliminated. Dispass is a console
+              application, but also has a simple graphical interface.
+            </p>
+            <p>
+              <a class="btn btn-primary" href="http://dispass.babab.nl">
+                Project website
+              </a>
+              <a class="btn" href="http://pypi.python.org/pypi/DisPass/">
+                PyPI project page
+              </a>
+              <a class="btn" href="https://github.com/babab/dispass">
+                Github repo
+              </a>
+              <a class="btn" href="https://github.com/ryuslash/dispass.el">
+                Emacs wrapper
+              </a>
+            </p>
+          </div>
+          <div class="span4">
+            <h2>About me</h2>
+            <p>
+              I am a computer enthusiast and software developer, passionate
+              about free and open source software and Unix-like operating
+              systems.
+              Well, that's it for now, but there will be a real 'about me'
+              section soon.
+            </p>
+            <h3>Email</h3>
+            <p>
+              If you want to contact me you can drop me an email at
+              <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;">
+                &#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;
+              </a>
+            </p>
+            <h3>IRC</h3>
+            <p>
+              You can find me on #babab @ irc.fredsco.com
+              <br>
+              You can find me as babab @ IRCnet, OFTC and Freenode
+            </p>
+            <h3>Social Coding</h3>
+            <ul class="unstyled">
+              <li>
+                <a href="https://github.com/babab/">
+                  Github profile
+                </a>
+              </li>
+              <li>
+                <a href="https://bitbucket.org/babab/">
+                  Bitbucket profile
+                </a>
+              </li>
+              <li>
+                <a href="https://www.ohloh.net/accounts/babab">
+                  Ohloh profile
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-    <hr>
-    <div class="spacery"></div>
-    <div>
-      <strong>Skin selector</strong>
-      <form id="skinform">
-        <select name="skin">
-          {% for val, name in skin.skindict.iteritems %}
-          <option value="{{ val }}"
-            {% if val == skin.active_skin %}
-              selected="selected"
-            {% endif %}>{{ name }}</option>
-          {% endfor %}
-        </select>
-        <input type="submit" value="Skin">
-      </form>
-    </div>
-  </div>
-
-  <h1>Home</h1>
-  <p>
-    At this site you can find (links to) some software
-    projects and also some (geeky) tools.
-  </p>
-  <p>
-    The site itself is written in Django and completely open-source.
-    You can use (components of) the code as long as you respect the
-    zlib/libpng style license.
-    <br>
-    <a href="https://github.com/babab/babab_nl/">
-      Visit the github project page.
-    </a>
-  </p>
-
-  <h2>About me</h2>
-  <p>
-    I am a computer enthusiast and software developer, passionate about
-    free and open source software and Unix-like operating systems. Well,
-    that's it for now, but there will be a real 'about me' section soon.
-  </p>
-
-  <h2>Contact me</h2>
-  <br>
-
-  <h3>Email</h3>
-  <p>
-    If you want to contact me you can drop me an email at
-    <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;">
-      &#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;
-    </a>
-  </p>
-
-  <h3>IRC</h3>
-  <ul>
-    <li>You can find me on #babab @ irc.fredsco.com</li>
-    <li>You can find me as babab @ IRCnet, OFTC and Freenode</li>
-  </ul>
-
-  <h3>Social Coding</h3>
-  <ul>
-    <li><a href="https://github.com/babab/">Github profile</a></li>
-    <li><a href="https://bitbucket.org/babab/">Bitbucket profile</a></li>
-    <!-- <li><a href="#">Launchpad profile</a></li> -->
-  </ul>
 {% endblock %}
 
 {# vim: set et ts=2 sw=2 sts=2 ft=htmldjango: #}

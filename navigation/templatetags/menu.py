@@ -25,20 +25,14 @@ register = Library()
 class MenuNode(Node):
     def __init__(self, section):
         self.retstr = ''
-
-        nItems = len(Sections.items)
-        i = 1
-
         for item in Sections.order:
             if item == section:
-                self.retstr += '%s' % item.capitalize()
+                self.retstr += '<li class="active"><a href="%s">%s</a></li>' \
+                        % (Sections.items[item], item.capitalize())
             else:
-                self.retstr += '<a href="%s">%s</a>' % (
-                        Sections.items[item], item.capitalize())
+                self.retstr += '<li><a href="%s">%s</a></li>' \
+                        % (Sections.items[item], item.capitalize())
 
-            if i != nItems:
-                self.retstr += ' | '
-                i += 1
 
     def render(self, context):
         return self.retstr
