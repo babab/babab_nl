@@ -4,13 +4,8 @@
     <meta charset="utf-8">
     <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css"
           rel="stylesheet">
+    <link href="{{ STATIC_URL }}style.css" rel="stylesheet">
     <title>{% block title %}{% endblock %} at babab.nl</title>
-    <style>
-      body {
-        padding-top: 60px;
-        padding-bottom: 50px;
-      }
-    </style>
     {% block head %}
     {% endblock %}
   </head>
@@ -31,42 +26,40 @@
         </div>
       </div>
     </div>
-    {% block content %}
-    {% endblock %}
-    <div class="navbar navbar-fixed-bottom">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-              <a href="http://github.com/babab/babab_nl/">
-                babab.nl
-              </a>
-              {{ version_babab }}
-              |
-              <a href="http://djangoproject.com/">
-                Django
-              </a>
-              {{ version_django }}
-              |
-              <a href="http://python.org/">
-                Python
-              </a>
-              {{ version_python }}
-              |
-              <a href="http://twitter.github.com/bootstrap/">
-                Bootstrap
-              </a>
-              2.1.0
-            </p>
-          </div>
-          <div class="nav-collapse collapse">
-            <p class="navbar-text">
-              Personal website of Benjamin Althues
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="container-fluid">
+      {% block content %}
+      {% endblock %}
+    </div><!--/container-fluid-->
+    <hr>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span6">
+          <small>
+            Copyright &copy; 2012 Benjamin Althues
+          </small>
+        </div><!--/span6-->
+        <div class="span6">
+          <small class="pull-right">
+            <a href="http://github.com/babab/babab_nl/">
+              babab.nl
+            </a>
+            {{ version_babab }} |
+            <a href="http://python.org/">
+              Python
+            </a>
+            {{ version_python }} |
+            <a href="http://djangoproject.com/">
+              Django
+            </a>
+            {{ version_django }} |
+            <a href="http://twitter.github.com/bootstrap/">
+              Bootstrap
+            </a>
+            2.1.0
+          </small>
+        </div><!--/span6-->
+      </div><!--/row-fluid-->
+    </div><!--/container-fluid-->
     <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>

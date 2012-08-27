@@ -2,85 +2,75 @@
 {% load menu %}
 
 {% block title %}Home{% endblock %}
-{% block body-attr %}{% endblock %}
-
-{% block head %}
-  <style>
-    body {
-      padding-top: 120px;
-    }
-  </style>
-{% endblock %}
+{% block body-attr %}id="home"{% endblock %}
 {% block menu %} {% menu home %} {% endblock %}
 
 {% block content %}
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span8">
-        <div class="hero-unit">
-          <h1>babab.nl</h1>
-          <p>
-            At this site you can find (links to) some software projects and
-            also some (geeky) tools.
-            The site has a <a href="http://www.djangoproject.com">Django</a>
-            backend, <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
-            frontend and is fully open-source. You can use
-            (components of) the code as long as you respect the
-            <a href="https://raw.github.com/babab/babab_nl/master/LICENSE">
-            zlib/libpng</a>
-            style license.
-          </p>
-          <p>
-            <a class="btn btn-small"
-              href="https://github.com/babab/babab_nl/">
-              Visit the github project page
-            </a>
-          </p>
-        </div>
-      </div><!--/span8-->
-      <div class="span4">
-        <h2>About me</h2>
+  <div class="row-fluid">
+    <div class="span8">
+      <div class="hero-unit">
+        <h1>babab.nl</h1>
         <p>
-          I am a computer enthusiast and software developer, passionate
-          about free and open source software and Unix-like operating
-          systems.
-          Well, that's it for now, but there will be a real 'about me'
-          section soon.
+          At this site you can find (links to) some software projects and
+          also some (geeky) tools.
+          The site has a <a href="http://www.djangoproject.com">Django</a>
+          backend, <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
+          frontend and is fully open-source. You can use
+          (components of) the code as long as you respect the
+          <a href="https://raw.github.com/babab/babab_nl/master/LICENSE">
+          zlib/libpng</a>
+          style license.
         </p>
-        <h3>Email</h3>
         <p>
-          If you want to contact me you can drop me an email at
-          <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;">
-            &#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;
+          <a class="btn btn-small"
+            href="https://github.com/babab/babab_nl/">
+            Visit the github project page
           </a>
         </p>
-        <h3>IRC</h3>
-        <p>
-          You can find me on #babab @ irc.fredsco.com
-          <br>
-          You can find me as babab @ IRCnet, OFTC and Freenode
-        </p>
-        <h3>Social Coding</h3>
-        <ul class="unstyled">
-          <li>
-            <a href="https://github.com/babab/">
-              Github profile
-            </a>
-          </li>
-          <li>
-            <a href="https://bitbucket.org/babab/">
-              Bitbucket profile
-            </a>
-          </li>
-          <li>
-            <a href="https://www.ohloh.net/accounts/babab">
-              Ohloh profile
-            </a>
-          </li>
-        </ul>
-      </div><!--/span4-->
-    </div><!--/row-fluid-->
-  </div><!--/container-fluid-->
+      </div>
+    </div><!--/span8-->
+    <div class="span4">
+      <h2>About me</h2>
+      <p>
+        I am a computer enthusiast and software developer, passionate
+        about free and open source software and Unix-like operating
+        systems.
+        Well, that's it for now, but there will be a real 'about me'
+        section soon.
+      </p>
+      <h3>Email</h3>
+      <p>
+        If you want to contact me you can drop me an email at
+        <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;">
+          &#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;
+        </a>
+      </p>
+      <h3>IRC</h3>
+      <p>
+        You can find me on #babab @ irc.fredsco.com
+        <br>
+        You can find me as babab @ IRCnet, OFTC and Freenode
+      </p>
+      <h3>Social Coding</h3>
+      <ul class="unstyled">
+        <li>
+          <a href="https://github.com/babab/">
+            Github profile
+          </a>
+        </li>
+        <li>
+          <a href="https://bitbucket.org/babab/">
+            Bitbucket profile
+          </a>
+        </li>
+        <li>
+          <a href="https://www.ohloh.net/accounts/babab">
+            Ohloh profile
+          </a>
+        </li>
+      </ul>
+    </div><!--/span4-->
+  </div><!--/row-fluid-->
 {% endblock %}
 
 {# vim: set et ts=2 sw=2 sts=2 ft=htmldjango: #}
