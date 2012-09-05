@@ -24,3 +24,13 @@ body {
 body#home {
     padding-top: 120px;
 }
+hr {
+    background-color: #B32D00 !important;
+    color: #B32D00 !important;
+}
+.spacer {
+    height: 60px;
+}
+.mleft30 {
+    margin-left: 30px;
+}
