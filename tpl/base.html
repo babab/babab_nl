@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css"
           rel="stylesheet">
     <link href="{{ STATIC_URL }}style.css" rel="stylesheet">
@@ -10,29 +11,19 @@
     {% endblock %}
   </head>
   <body {% block body-attr %}{% endblock %}>
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="brand" href="#">babab.nl</a>
-          <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-              Personal website of Benjamin Althues
-            </p>
-            <ul class="nav nav-pills">
-              {% block menu %}
-              {% endblock %}
-            </ul>
-          </div>
-        </div>
-      </div>
+    <div class="container">
+      <ul class="nav nav-pills">
+        {% block menu %}
+        {% endblock %}
+      </ul>
     </div>
-    <div class="container-fluid">
+    <div class="container">
       {% block content %}
       {% endblock %}
-    </div><!--/container-fluid-->
+    </div><!--/container-->
     <div class="spacer"></div>
-    <div class="container-fluid">
-      <div class="row-fluid">
+    <div class="container">
+      <div class="row">
         <div class="span6">
           <small>
             Copyright &copy; 2012 Benjamin Althues
@@ -51,15 +42,11 @@
             <a href="http://djangoproject.com/">
               Django
             </a>
-            {{ version_django }} |
-            <a href="http://twitter.github.com/bootstrap/">
-              Bootstrap
-            </a>
-            2.1.0
+            {{ version_django }}
           </small>
         </div><!--/span6-->
-      </div><!--/row-fluid-->
-    </div><!--/container-fluid-->
+      </div><!--/row-->
+    </div><!--/container-->
     <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>

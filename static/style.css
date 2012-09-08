@@ -19,10 +19,7 @@
  */
 
 body {
-    padding-top: 60px;
-}
-body#home {
-    padding-top: 120px;
+    padding-top: 20px;
 }
 hr {
     background-color: #B32D00 !important;
