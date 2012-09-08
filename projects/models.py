@@ -36,6 +36,9 @@ class ProjectRelease(Base):
     project = models.ForeignKey(Project)
     date = models.DateField()
 
+    class Meta:
+        ordering = ['-date']
+
 class ProjectTag(Base):
     pass
 

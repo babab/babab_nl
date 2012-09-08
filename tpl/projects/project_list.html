@@ -34,7 +34,7 @@
           <section>
             <div class="container">
               <div class="row">
-                <div class="span8">
+                <div class="span7">
                   <div class="hero-unit">
                     <h1 id="{{ p.name }}">{{ p.name }}</h1>
                     {% for t in p.tags.all %}
@@ -42,27 +42,36 @@
                         {{ t.name }}
                       </span> &nbsp;
                     {% endfor %}
+                    <div class="spacer"></div>
                     <div>
                       {{ p.description|markdown }}
                     </div>
                   </div>
                 </div>
-                <div class="span2">
+                <div class="span3">
                   {% if  p.projectlink_set.all %}
                     <h2>Links</h2>
-                    <div class="btn-group btn-group-vertical">
-                      {% for link in p.projectlink_set.all %}
-                      <a class="btn {% if forloop.first %}btn-primary{% endif %}"
-                         href="{{ link.url }}">{{ link.name }}</a>
-                        <br>
-                      {% endfor %}
-                    </div>
+                    {% for link in p.projectlink_set.all %}
+                      <strong>{{ link.name }}</strong><br>
+                      <small>
+                      <a href="{{ link.url }}">{{ link.url }}</a><br>
+                      </small>
+                    {% endfor %}
                   {% endif %}
                   {% if  p.projectrelease_set.all %}
                     <h2>Release(s)</h2>
-                    {% for rel in p.projectrelease_set.all %}
-                    <span class="label">{{ rel.name }} | {{ rel.date }}</span>
-                    {% endfor %}
+                    <table class="table">
+                      {% for rel in p.projectrelease_set.all %}
+                        <tr>
+                          <td>
+                            <span class="label">{{ rel.name }}</span>
+                          </td>
+                          <td>
+                            {{ rel.date }}
+                          </td>
+                        </tr>
+                      {% endfor %}
+                    </table>
                   {% endif %}
                 </div>
               </div>
