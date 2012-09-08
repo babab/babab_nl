@@ -17,70 +17,62 @@
     </h1>
   </div>
 
-  {% for p in projects %}
-    <h2>
-      {{ p.name }}
-      <small class="mleft30">
-      {% for t in p.tags.all %}
-        <a href="#/projects/tag/{{ tag.name }}" class="btn btn-info btn-mini">
-          {{ t.name }}
-        </a>
-      {% endfor %}
-      </small>
-    </h2>
-    <div class="row-fluid">
-      <div class="span6">
-        <div>
-          {{ p.description|markdown }}
-        </div>
-      </div><!--/span6-->
-      <div class="span3">
-        {% if  p.projectlink_set.all %}
-          <h3>Project link(s)</h3>
-          <table class="table">
-            <tr>
-              <th>Name</th>
-              <th>URL</th>
-            </tr>
-            {% for link in p.projectlink_set.all %}
-              <tr>
-                <td>
-                  {{ link.name }}
-                </td>
-                <td>
-                  <a href="{{ link.url }}">{{ link.url }}</a>
-                </td>
-              </tr>
-            {% endfor %}
-          </table>
-        {% endif %}
-      </div><!--/span3-->
-      <div class="span3">
-        {% if  p.projectrelease_set.all %}
-          <h3>Release(s)</h3>
-          <table class="table">
-            <tr>
-              <th>Version</th>
-              <th>Release date</th>
-            </tr>
-            {% for rel in p.projectrelease_set.all %}
-              <tr>
-                <td>
-                  {{ rel.name }}
-                </td>
-                <td>
-                  {{ rel.date }}
-                </td>
-              </tr>
-            {% endfor %}
-          </table>
-        {% endif %}
-      </div><!--/span3-->
-    </div><!--/row-fluid-->
-    {% if not forloop.last %}<hr>{% endif %}
-    <hr>
-  {% endfor %}
+  <div class="container">
+    <div class="row">
+      <div class="span2">
+        <ul class="nav nav-list">
+          <li class="nav-header">Projects</li>
+          {% for p in projects %}
+          <li>
+            <a href="#{{ p.name }}">{{ p.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="span10">
+        {% for p in projects %}
+          <section>
+            <div class="container">
+              <div class="row">
+                <div class="span8">
+                  <div class="hero-unit">
+                    <h1 id="{{ p.name }}">{{ p.name }}</h1>
+                    {% for t in p.tags.all %}
+                      <span class="label">
+                        {{ t.name }}
+                      </span> &nbsp;
+                    {% endfor %}
+                    <div>
+                      {{ p.description|markdown }}
+                    </div>
+                  </div>
+                </div>
+                <div class="span2">
+                  {% if  p.projectlink_set.all %}
+                    <h2>Links</h2>
+                    <div class="btn-group btn-group-vertical">
+                      {% for link in p.projectlink_set.all %}
+                      <a class="btn {% if forloop.first %}btn-primary{% endif %}"
+                         href="{{ link.url }}">{{ link.name }}</a>
+                        <br>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                  {% if  p.projectrelease_set.all %}
+                    <h2>Release(s)</h2>
+                    {% for rel in p.projectrelease_set.all %}
+                    <span class="label">{{ rel.name }} | {{ rel.date }}</span>
+                    {% endfor %}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </section>
+          <hr>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 {% endblock %}
 
-
-{# vim: set et ts=2 sw=2 sts=2 ft=htmldjango: #}
+{# vim: set et ts=2 sw=2 sts=2 fdm=indent ft=htmldjango: #}
