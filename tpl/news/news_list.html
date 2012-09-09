@@ -8,28 +8,35 @@
   {% menu news %}
 {% endblock %}
 
-
 {% block content %}
-  <h1>News</h1>
-  <p>
-    Here are some small posts about what I have been doing lately.
-  </p>
-
-  <div id="news">
+  <div class="container">
+    <div class="page-header">
+      <h1>
+        News
+        <small>
+          some small posts about what I have been doing lately
+        </small>
+      </h1>
+    </div>
     {% for item in news %}
-    <strong>{{ item.title }}</strong><br>
-    <small>Posted at {{ item.time }} |
-      Tagged with
-      {% for tag in item.tag.all %}
-        <a href="#/news/tag/{{ tag.name }}">
-          {{ tag.name }}</a>{% if not forloop.last %},{% endif %}
-      {% endfor %}
-    </small><br>
-      <p>
-      {{ item.text }}
-      </p>
-      <br>
+      <div class="hero-unit inversed">
+        <h2>{{ item.title }}</h2>
+        <p>
+          {% for tag in item.tag.all %}
+            <span class="label">
+              <i class="icon-tag"></i>
+              {{ tag.name }}
+            </span>&nbsp;
+          {% endfor %}
+          | Posted at {{ item.time }}
+        </p>
+        <br>
+        <p>
+        {{ item.text }}
+        </p>
+      </div>
     {% endfor %}
+    </p>
   </div>
 {% endblock %}
 
