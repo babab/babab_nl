@@ -25,6 +25,24 @@ hr {
     background-color: #B32D00 !important;
     color: #B32D00 !important;
 }
+kbd {
+    padding: 2px 5px;
+    border: 1px solid rgb(204, 204, 204);
+    background-color: rgb(247, 247, 247);
+    color: rgb(51, 51, 51);
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2),
+                0px 0px 0px 2px rgb(255, 255, 255) inset;
+    border-radius: 3px 3px 3px 3px;
+    display: inline-block;
+    text-shadow: 0px 1px 0px rgb(255, 255, 255);
+}
+
+.unstyled ul, .unstyled ol {
+    margin-left: 0px;
+    list-style: none outside none;
+}
+
+
 .spacer {
     height: 30px;
 }

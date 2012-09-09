@@ -26,6 +26,6 @@ charOptions = (('1', 'Range a-z'),
                ('5', 'Include !,1,l,i,I,0,o,O'))
 
 class strgenForm(forms.Form):
-    number_of_chars = forms.IntegerField(min_value=2,max_value=108)
+    number_of_chars = forms.IntegerField(min_value=2,max_value=108, initial=50)
     type_of_chars = forms.MultipleChoiceField(choices=charOptions,
-            widget=CheckboxSelectMultiple)
+            widget=CheckboxSelectMultiple, initial=[1,2,3,4])

@@ -3,69 +3,96 @@
 {% block title %}String Generator tool{% endblock %}
 
 {% block content %}
-  <p class="floatr">
-    <a href="/tools/">Go back to all tools</a>
-  </p>
-  <h1>String Generator tool</h1>
-  <p>
-    Use this tool to create a random string.
-  </p>
-
-  {% if result %}
-    <pre id="hash">Random string: <strong>{{ result }}</strong></pre>
-  {% endif %}
-
-  <div id="strgen_info" class="floatr">
-      In the a-z, A-Z and 0-9 ranges the following characters are not included
-      by default.
-      <ul>
-        <li><kbd>!</kbd> exclamation mark</li>
-        <li><kbd>1</kbd> one</li>
-        <li><kbd>l</kbd> lowercase L</li>
-        <li><kbd>i</kbd> lowercase I</li>
-        <li><kbd>I</kbd> uppercase I</li>
-        <li><kbd>0</kbd> zero</li>
-        <li><kbd>o</kbd> lowercase O</li>
-        <li><kbd>O</kbd> uppercase O</li>
-      </ul>
-  </div>
-
-  <form method="post" action="/strgen/">
-    {% csrf_token %}
-    <div id="strgen">
-      {{ form.as_p }}
-    </div>
-    <input type="submit" id="strgen_submit" value="Get random string">
-  </form>
-
+  <div class="container">
+    <ul class="breadcrumb">
+      <li><a href="/tools/">Tools</a> <span class="divider">/</span></li>
+      <li class="active">
+        strgen
+        <span class="divider"></span>
+        <a class="btn btn-mini" href="/strgen/"><i class="icon-repeat"></i></a>
+      </li>
+    </ul>
     <p>
-      Special chars are:
-      <kbd>@</kbd>
-      <kbd>#</kbd>
-      <kbd>$</kbd>
-      <kbd>%</kbd>
-      <kbd>^</kbd>
-      <kbd>*</kbd>
-      <kbd>(</kbd>
-      <kbd>)</kbd>
-      <kbd>_</kbd>
-      <kbd>-</kbd>
-      <kbd>=</kbd>
-      <kbd>+</kbd>
-      <kbd>/</kbd>
-      <kbd>?</kbd>
-      <kbd>.</kbd>
-      <kbd>,</kbd>
-      <kbd>~</kbd>
-      <kbd>[</kbd>
-      <kbd>]</kbd>
-      <kbd>{</kbd>
-      <kbd>}</kbd>
-      <kbd>|</kbd>
-      <kbd>;</kbd>
-      <kbd>:</kbd>
     </p>
+    <h1>
+      String Generator tool
+      <small>Create random strings</small>
+    </h1>
 
+    <div class="row">
+      <div class="span4">
+        <div class="alert">
+          For improved readability of generated strings, the following
+          characters are removed from the a-z, A-Z and 0-9 ranges by default.
+            <ul class="unstyled">
+              <li><kbd>!</kbd> exclamation mark</li>
+              <li><kbd>1</kbd> one</li>
+              <li><kbd>l</kbd> lowercase L</li>
+              <li><kbd>i</kbd> lowercase I</li>
+              <li><kbd>I</kbd> uppercase I</li>
+              <li><kbd>0</kbd> zero</li>
+              <li><kbd>o</kbd> lowercase O</li>
+              <li><kbd>O</kbd> uppercase O</li>
+            </ul>
+        </div>
+      </div>
+      <form method="post" action="/strgen/#hash">
+        {% csrf_token %}
+        <div class="span4">
+          <p>
+            <label for="id_type_of_chars_0">
+              <strong>Type of chars</strong>
+            </label>
+            {% if form.type_of_chars.errors %}
+              {% for error in form.type_of_chars.errors %}
+                <div class="alert alert-error">Error: {{ error }}</div>
+              {% endfor %}
+            {% endif %}
+            <div class="unstyled">
+              {{ form.type_of_chars }}
+            </div>
+          </p>
+        </div>
+        <div class="span4">
+          <p>
+            <label for="id_number_of_chars">
+              <strong>Number of chars (2-108)</strong>
+            </label>
+            {% if form.number_of_chars.errors %}
+              {% for error in form.number_of_chars.errors %}
+                <div class="alert alert-error">Error: {{ error }}</div>
+              {% endfor %}
+            {% endif %}
+            <div class="input-prepend">
+              <span class="add-on">#</span>
+              <input type="text" name="number_of_chars"
+                     id="id_number_of_chars" class="span1"
+                     value="{{ form.number_of_chars.value }}">
+            </div>
+            <br>
+            <div>
+              <input type="submit" id="strgen_submit" class="btn btn-primary"
+                     value="Get random string">
+              <a class="btn" href="/strgen/"><i class="icon-repeat"></i></a>
+            </div>
+          </p>
+        </div>
+      </form>
+    </div>
+    {% if result %}
+      <div class="hero-unit" id="hash">
+        <pre>Random string: <strong>{{ result }}</strong></pre>
+      </div>
+    {% endif %}
+    <p class="alert alert-info">
+      Special chars are:
+      <kbd>@</kbd> <kbd>#</kbd> <kbd>$</kbd> <kbd>%</kbd> <kbd>^</kbd>
+      <kbd>*</kbd> <kbd>(</kbd> <kbd>)</kbd> <kbd>_</kbd> <kbd>-</kbd>
+      <kbd>=</kbd> <kbd>+</kbd> <kbd>/</kbd> <kbd>?</kbd> <kbd>.</kbd>
+      <kbd>,</kbd> <kbd>~</kbd> <kbd>[</kbd> <kbd>]</kbd> <kbd>{</kbd>
+      <kbd>}</kbd> <kbd>|</kbd> <kbd>;</kbd> <kbd>:</kbd>
+    </p>
+  </div>
 {% endblock %}
 
 {# vim: set et ts=2 sw=2 sts=2 ft=htmldjango: #}
