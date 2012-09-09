@@ -36,6 +36,7 @@
                     <h1>{{ p.name }}</h1>
                     {% for t in p.tags.all %}
                       <span class="label">
+                        <i class="icon-tag"></i>
                         {{ t.name }}
                       </span> &nbsp;
                     {% endfor %}
@@ -57,11 +58,13 @@
                   {% endif %}
                   {% if  p.projectrelease_set.all %}
                     <h2>Release(s)</h2>
-                    <table class="table">
+                    <table class="table table-condensed">
                       {% for rel in p.projectrelease_set.all %}
                         <tr>
                           <td>
-                            <span class="label">{{ rel.name }}</span>
+                            <span class="label">
+                              <i class="icon-check"></i> {{ rel.name }}
+                            </span>
                           </td>
                           <td>
                             {{ rel.date }}
