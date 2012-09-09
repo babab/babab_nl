@@ -42,6 +42,9 @@ kbd {
     list-style: none outside none;
 }
 
+.inversed {
+    background-color: #EFEFEF;
+}
 
 .spacer {
     height: 30px;
