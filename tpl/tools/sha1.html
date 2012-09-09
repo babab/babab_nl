@@ -3,21 +3,25 @@
 {% block title %}sha1 hash/checksum{% endblock %}
 
 {% block content %}
-  <p class="floatr">
-    <a href="/tools/">Go back to all tools</a>
-  </p>
-  <h1>sha1 hash/checksum</h1>
+  <div class="container">
+    <ul class="breadcrumb">
+      <li><a href="/tools/">Tools</a> <span class="divider">/</span></li>
+      <li class="active">sha1</li>
+    </ul>
+    <h1>sha1 hash/checksum</h1>
 
-  {% if digest %}
-    <pre id="hash">Hash: <strong>{{ digest }}</strong></pre>
-  {% endif %}
+    {% if digest %}
+      <pre class="alert alert-success" id="hash"
+           >Hash: <strong>{{ digest }}</strong></pre>
+    {% endif %}
 
-  <form method="post" action="/sha1/">
-    {% csrf_token %}
-    <textarea id="sha1" name="text" class="fullwidth">{{ text }}</textarea>
-    <input type="submit" id="sha1_submit" value="Hash">
-  </form>
-
+    <form method="post" action="/sha1/">
+      {% csrf_token %}
+      <textarea id="sha1" name="text" rows="10"
+                class="fullwidth">{{ text }}</textarea>
+      <input type="submit" id="sha1_submit" class="btn" value="Hash">
+    </form>
+  </div>
 {% endblock %}
 
 {# vim: set et ts=2 sw=2 sts=2 ft=htmldjango: #}
