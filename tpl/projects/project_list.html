@@ -16,16 +16,6 @@
       <small>open source</small>
     </h1>
     <div class="row">
-      <div class="span2">
-        <ul class="nav nav-list">
-          <li class="nav-header">Projects</li>
-          {% for p in projects %}
-          <li>
-            <a href="#{{ p.name }}">{{ p.name }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
       <div class="span10">
         {% for p in projects %}
           <section id="{{ p.name }}">
@@ -79,6 +69,18 @@
           </section>
           <hr>
         {% endfor %}
+      </div>
+      <div class="span2">
+        <div data-spy="affix" data-offset-top="20">
+        <ul class="nav nav-list">
+          <li class="nav-header">Projects</li>
+          {% for p in projects %}
+          <li>
+            <a href="#{{ p.name }}">{{ p.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+        </div>
       </div>
     </div>
   </div>
