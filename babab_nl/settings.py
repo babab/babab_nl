@@ -128,7 +128,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     'babab_nl.context_processors.platform_version_info',
-    'babab_nl.context_processors.active_skin',
 )
 
 # A sample logging configuration. The only tangible logging
