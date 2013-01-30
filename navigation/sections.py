@@ -19,9 +19,7 @@
 class Sections(object):
     items = {
         'home': '/',
-        'projects': '/projects/',
         'tools': '/tools/',
-        'news': '/news/',
     }
 
-    order = ('home', 'projects', 'tools', 'news')
+    order = ('home', 'tools')
