@@ -18,30 +18,28 @@
       handy webdesign and (web)development tools.
     </p>
 
-    <div class="hero-unit inversed">
-      <table class="table">
-        <thead>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Link</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for name, description in tools.iteritems %}
           <tr>
-            <th>Name</th>
-            <th>Link</th>
-            <th>Description</th>
+            <th>{{ name }}</th>
+            <td>
+              <a href="http://babab.nl/{{ name }}">
+                http://babab.nl/{{ name }}/
+              </a>
+            </td>
+            <td>{{ description }}</td>
           </tr>
-        </thead>
-        <tbody>
-          {% for name, description in tools.iteritems %}
-            <tr>
-              <th>{{ name }}</th>
-              <td>
-                <a href="http://babab.nl/{{ name }}">
-                  http://babab.nl/{{ name }}/
-                </a>
-              </td>
-              <td>{{ description }}</td>
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 {% endblock %}
 

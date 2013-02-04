@@ -25,7 +25,7 @@ except ImportError:
     print 'Move example.settings_local.py -> settings_local.py and edit it'
     sys.exit(1)
 
-BABAB_VERSION = 'v5.0-dev'
+BABAB_VERSION = 'v5.1.0'
 
 DEPLOY_PATH = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
