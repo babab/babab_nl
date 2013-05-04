@@ -18,7 +18,7 @@ the zlib/libpng style license.
 
 ## License
 
-Copyright (C) 2012 Benjamin Althues
+Copyright (C) 2012-2013  Benjamin Althues
 
 This software is provided 'as-is', without any express or implied
 warranty.  In no event will the authors be held liable for any damages
