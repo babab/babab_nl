@@ -22,3 +22,13 @@ from django.template import RequestContext
 
 def index(request):
     return render_to_response('home.html', {}, RequestContext(request))
+
+
+def dispass(request):
+    return render_to_response('projects/dispass.html', {},
+                              RequestContext(request))
+
+
+def springwhiz(request):
+    return render_to_response('projects/springwhiz.html', {},
+                              RequestContext(request))

@@ -4,11 +4,6 @@ My new website. It has a Django backend, Bootstrap frontend and is fully
 open-source. You can use (components of) the code as long as you respect
 the zlib/libpng style license.
 
-## Features
-
-* News application
-* Software projects application
-
 ### Tools
 
 * rot13 - Rotate text 13 chars.
