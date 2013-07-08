@@ -112,8 +112,6 @@ INSTALLED_APPS_HEAD = (
     'django.contrib.webdesign',
     'django.contrib.markup',
     'navigation',
-    'news',
-    'projects',
     'tools',
 )
 
