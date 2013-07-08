@@ -1,44 +1,42 @@
-{% extends "tools/index.html" %}
+{% extends "base.html" %}
 
 {% block title %}rot13 encoder/decoder{% endblock %}
 
 {% block content %}
-  <div class="container">
-    <ul class="breadcrumb">
-      <li><a href="/tools/">Tools</a> <span class="divider">/</span></li>
-      <li class="active">rot13</li>
-    </ul>
-    <h1>
-      rot13 encoder/decoder
-      <small>rotate text 13 chars</small>
-    </h1>
-    <blockquote class="pull-right">
-      <em>
-        "ROT13 ("rotate by 13 places", sometimes hyphenated ROT-13) is a simple
-        letter substitution cipher that replaces a letter with the letter 13
-        letters after it in the alphabet. ROT13 is an example of the Caesar
-        cipher, developed in ancient Rome.
-        In the basic Latin alphabet, ROT13 is its own inverse; that is, to undo
-        ROT13, the same algorithm is applied, so the same action can be used for
-        encoding and decoding. The algorithm provides no cryptographic security,
-        and is often cited as a canonical example of weak encryption."
-      </em>
-      <small>
-        From Wikipedia
-        <cite title="Source Title">
-          <a href="https://en.wikipedia.org/wiki/ROT13">
-            https://en.wikipedia.org/wiki/ROT13
-          </a>
-        </cite>
-      </small>
-    </blockquote>
-    <form method="post" action="/rot13/">
-      {% csrf_token %}
-      <textarea id="rot13" name="text" rows="10"
-                class="fullwidth">{{ text }}</textarea>
-      <input type="submit" id="rot13_submit" class="btn" value="Encode/Decode">
-    </form>
-  </div>
+  <h1>
+    rot13
+    <small>
+      encoder / decoder<br />
+      rotate text 13 chars
+    </small>
+  </h1>
+  <blockquote class="pull-right">
+    <em>
+      "ROT13 ("rotate by 13 places", sometimes hyphenated ROT-13) is a simple
+      letter substitution cipher that replaces a letter with the letter 13
+      letters after it in the alphabet. ROT13 is an example of the Caesar
+      cipher, developed in ancient Rome.
+      In the basic Latin alphabet, ROT13 is its own inverse; that is, to undo
+      ROT13, the same algorithm is applied, so the same action can be used for
+      encoding and decoding. The algorithm provides no cryptographic security,
+      and is often cited as a canonical example of weak encryption."
+    </em>
+    <small>
+      From Wikipedia
+      <cite title="Source Title">
+        <a href="https://en.wikipedia.org/wiki/ROT13">
+          https://en.wikipedia.org/wiki/ROT13
+        </a>
+      </cite>
+    </small>
+  </blockquote>
+  <form method="post" action="/rot13/">
+    {% csrf_token %}
+    <textarea id="rot13" name="text" rows="10"
+              class="fullwidth">{{ text }}</textarea>
+    <input type="submit" id="rot13_submit"
+           class="btn btn-success pull-right" value="Encode/Decode">
+  </form>
 {% endblock %}
 
 {# vim: set et ts=2 sw=2 sts=2 ft=htmldjango: #}

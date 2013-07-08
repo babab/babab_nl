@@ -20,11 +20,22 @@
 
 body {
     padding-top: 20px;
+    background-color: #000;
+    color: #FFF;
 }
-hr {
-    background-color: #B32D00 !important;
-    color: #B32D00 !important;
+#footer {
+    padding-bottom: 100px;
 }
+blockquote {
+    background-color: #000;
+}
+.add-on {
+    color: #000;
+}
+.code {
+    font-family: Courier, Monospace;
+}
+
 kbd {
     padding: 2px 5px;
     border: 1px solid rgb(204, 204, 204);
@@ -49,13 +60,90 @@ kbd {
 .spacer {
     height: 30px;
 }
+.spacer15 {
+    height: 15px;
+}
+.spacer20 {
+    height: 20px;
+}
 .mleft30 {
     margin-left: 30px;
 }
 .fullwidth {
     width: 100%;
 }
+.hero-unit, h1, h2, h3, h4, h5, h6,
 h1 small, h2 small, h3 small,
 h4 small, h5 small, h6 small {
-    color: black;
+    color: white;
+}
+
+ul.ul {
+    list-style: square;
+    list-style-type: square;
+}
+.aright {
+    text-align: right;
+}
+
+.dinges {
+    background-color: #000;
+    border: 2px solid #000;
+}
+.dinges:hover {
+    border: 2px solid white;
+    cursor: pointer;
+}
+.dinges div {
+    padding: 30px;
+    vertical-align: -50px;
+}
+.dinges-static {
+    padding: 30px;
+}
+.dinges-header {
+    display: block;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.orange, .orange h1 {
+    background-color: #F09609;
+    color: #000;
+}
+.blue, .blue h1 {
+    background-color: #1BA1E2;
+    color: #000;
+}
+.purple, .purple h1 {
+    background-color: #A200FF;
+    color: #FFF;
+}
+.magenta, .magenta h1 {
+    background-color: #FF0097;
+    color: #FFF;
+}
+.teal, .teal h1 {
+    background-color: #00ABA9;
+    color: #000;
+}
+.lime, .lime h1 {
+    background-color: #8CBF26;
+    color: #000;
+}
+.brown, .brown h1 {
+    background-color: #A05000;
+    color: #FFF;
+}
+.pink, .pink h1 {
+    background-color: #E671B8;
+    color: #FFF;
+}
+.red, .red h1 {
+    background-color: #E51400;
+    color: #FFF;
+}
+.green, .green h1 {
+    background-color: #339933;
+    color: #FFF;
 }

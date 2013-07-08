@@ -1,28 +1,22 @@
-{% extends "tools/index.html" %}
+{% extends "base.html" %}
 
-{% block title %}md5 hash/checksum{% endblock %}
+{% block title %}md5 hash / checksum{% endblock %}
 
 {% block content %}
+  <h1>md5 <small>hash / checksum</small></h1>
 
-  <div class="container">
-    <ul class="breadcrumb">
-      <li><a href="/tools/">Tools</a> <span class="divider">/</span></li>
-      <li class="active">sha1</li>
-    </ul>
-    <h1>md5 hash/checksum</h1>
+  {% if digest %}
+    <pre class="alert alert-success" id="hash"
+         >Hash: <strong>{{ digest }}</strong></pre>
+  {% endif %}
 
-    {% if digest %}
-      <pre class="alert alert-success" id="hash"
-           >Hash: <strong>{{ digest }}</strong></pre>
-    {% endif %}
-
-    <form method="post" action="/md5/">
-      {% csrf_token %}
-      <textarea id="md5" name="text" rows="10"
-                class="fullwidth">{{ text }}</textarea>
-      <input type="submit" id="md5_submit" class="btn" value="Hash">
-    </form>
-  </div>
+  <form method="post" action="/md5/">
+    {% csrf_token %}
+    <textarea id="md5" name="text" rows="10"
+              class="fullwidth">{{ text }}</textarea>
+    <input type="submit" id="md5_submit"
+           class="btn btn-success pull-right" value="Hash">
+  </form>
 {% endblock %}
 
 {# vim: set et ts=2 sw=2 sts=2 ft=htmldjango: #}
