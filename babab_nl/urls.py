@@ -23,7 +23,7 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-    url(r'^$', 'index', name='index'),
+    url(r'^$', 'babab_nl.views.index', name='index'),
     url(r'^dispass/$', 'babab_nl.views.dispass', name='dispass'),
     url(r'^springwhiz/$', 'babab_nl.views.springwhiz', name='springwhiz'),
     url(r'^rot13/$', 'tools.views.rot13', name='rot13'),
