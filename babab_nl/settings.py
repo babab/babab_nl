@@ -112,7 +112,7 @@ INSTALLED_APPS_HEAD = (
     'django.contrib.webdesign',
     'django.contrib.markup',
     'navigation',
-    'tools',
+    'babab_nl.tools',
 )
 
 INSTALLED_APPS = INSTALLED_APPS_HEAD + INSTALLED_APPS_TAIL

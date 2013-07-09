@@ -26,9 +26,9 @@ urlpatterns = patterns(
     url(r'^$', 'babab_nl.views.index', name='index'),
     url(r'^dispass/$', 'babab_nl.views.dispass', name='dispass'),
     url(r'^springwhiz/$', 'babab_nl.views.springwhiz', name='springwhiz'),
-    url(r'^rot13/$', 'tools.views.rot13', name='rot13'),
-    url(r'^md5/$', 'tools.views.md5', name='md5'),
-    url(r'^sha1/$', 'tools.views.sha1', name='sha1'),
-    url(r'^strgen/$', 'tools.views.strgen', name='strgen'),
+    url(r'^rot13/$', 'babab_nl.tools.views.rot13', name='rot13'),
+    url(r'^md5/$', 'babab_nl.tools.views.md5', name='md5'),
+    url(r'^sha1/$', 'babab_nl.tools.views.sha1', name='sha1'),
+    url(r'^strgen/$', 'babab_nl.tools.views.strgen', name='strgen'),
     url(r'^admin/', include(admin.site.urls)),
 )
