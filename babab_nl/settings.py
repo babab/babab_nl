@@ -111,7 +111,6 @@ INSTALLED_APPS_HEAD = (
     'django.contrib.admin',
     'django.contrib.webdesign',
     'django.contrib.markup',
-    'navigation',
     'babab_nl.tools',
 )
 
