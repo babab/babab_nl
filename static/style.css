@@ -87,6 +87,7 @@ ul.ul {
 }
 
 .dinges {
+    height: 130px;
     background-color: #000;
     border: 2px solid #000;
 }
@@ -96,10 +97,12 @@ ul.ul {
 }
 .dinges div {
     padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     vertical-align: -50px;
 }
 .dinges-static {
-    padding: 30px;
+    padding: 20px;
 }
 .dinges-header {
     display: block;

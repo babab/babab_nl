@@ -20,86 +20,99 @@
 
       <div class="row">
         <div class="span6">
-
-          <div class="purple dinges" data-href="/dispass/">
-            <span class="dinges-header pull-right">project</span>
-            <div>
-              <h1>DisPass</h1>
-              <small>
-                Multiplatform CLI / GUI application<br />
-                <i class="icon-tag"></i> Python &nbsp;
-                <i class="icon-tag"></i> Security &nbsp;
-                <i class="icon-tag"></i> Command line &nbsp;
-                <i class="icon-tag"></i> GUI &nbsp;
-              </small>
+          {% if section == 'dispass' %}
+            {% include 'dinges-home.inc.html' %}
+          {% else %}
+            <div class="purple dinges" data-href="/dispass/">
+              <span class="dinges-header pull-right">project</span>
+              <div>
+                <h1>DisPass</h1>
+                <small>
+                  Multiplatform CLI / GUI application<br />
+                  <i class="icon-tag"></i> Python &nbsp;
+                  <i class="icon-tag"></i> Security &nbsp;
+                  <i class="icon-tag"></i> Command line &nbsp;
+                  <i class="icon-tag"></i> GUI &nbsp;
+                </small>
+              </div>
             </div>
-          </div>
-
+          {% endif %}
           <div class="spacer20"></div>
-
           <div class="row">
             <div class="span3">
-              <div class="orange dinges" data-href="/strgen/">
-                <span class="dinges-header pull-right">online tool</span>
-                <div>
-                  <h1>strgen</h1>
-                  <small>
-                    Generate random strings and/or passwords
-                  </small>
-                </div>
-              </div>
+              {% if section == 'strgen' %}
+                {% include 'dinges-home.inc.html' %}
+              {% else %}
+                  <div class="orange dinges" data-href="/strgen/">
+                    <div>
+                      <h1>strgen</h1>
+                      <small>
+                        Generate random strings and/or passwords
+                      </small>
+                    </div>
+                  </div>
+              {% endif %}
               <div class="spacer20"></div>
-              <div class="brown dinges" data-href="/md5/">
-                <span class="dinges-header pull-right">online tool</span>
-                <div>
-                  <h1>md5</h1>
-                  <small>
-                    Create md5 hash / checksum from text
-                  </small>
+              {% if section == 'md5' %}
+                {% include 'dinges-home.inc.html' %}
+              {% else %}
+                <div class="brown dinges" data-href="/md5/">
+                  <div>
+                    <h1>md5</h1>
+                    <small>
+                      Create md5 hash / checksum from text
+                    </small>
+                  </div>
                 </div>
-              </div>
+              {% endif %}
             </div>
             <div class="span3">
-              <div class="green dinges" data-href="/rot13/">
-                <span class="dinges-header pull-right">online tool</span>
-                <div>
-                  <h1>rot13</h1>
-                  <small>
-                    Rotate text 13 chars<br />
-                    Ebgngr grkg 13 punef
-                  </small>
+              {% if section == 'rot13' %}
+                {% include 'dinges-home.inc.html' %}
+              {% else %}
+                <div class="green dinges" data-href="/rot13/">
+                  <div>
+                    <h1>rot13</h1>
+                    <small>
+                      Rotate text 13 chars<br />
+                      Ebgngr grkg 13 punef
+                    </small>
+                  </div>
                 </div>
-              </div>
+              {% endif %}
               <div class="spacer20"></div>
-              <div class="lime dinges" data-href="/sha1/">
-                <span class="dinges-header pull-right">online tool</span>
-                <div>
-                  <h1>sha1</h1>
-                  <small>
-                    Create sha1 hash / checksum from text
-                  </small>
+              {% if section == 'sha1' %}
+                {% include 'dinges-home.inc.html' %}
+              {% else %}
+                <div class="lime dinges" data-href="/sha1/">
+                  <div>
+                    <h1>sha1</h1>
+                    <small>
+                      Create sha1 hash / checksum from text
+                    </small>
+                  </div>
                 </div>
+              {% endif %}
+            </div>
+          </div>
+          <div class="spacer20"></div>
+          {% if section == 'springwhiz' %}
+            {% include 'dinges-home.inc.html' %}
+          {% else %}
+            <div class="magenta dinges" data-href="/springwhiz/">
+              <span class="dinges-header pull-right">project</span>
+              <div>
+                <h1>springwhiz</h1>
+                <small>
+                  duckduckgo search / pastebin / bookmarks<br />
+                  <i class="icon-tag"></i> Python &nbsp;
+                  <i class="icon-tag"></i> Django &nbsp;
+                  <i class="icon-tag"></i> Notepad / Pastebin &nbsp;
+                </small>
               </div>
             </div>
-          </div>
-
-          <div class="spacer20"></div>
-
-          <div class="red dinges" data-href="/springwhiz/">
-            <span class="dinges-header pull-right">project</span>
-            <div>
-              <h1>springwhiz</h1>
-              <small>
-                duckduckgo search / pastebin / bookmarks<br />
-                <i class="icon-tag"></i> Python &nbsp;
-                <i class="icon-tag"></i> Django &nbsp;
-                <i class="icon-tag"></i> Notepad / Pastebin &nbsp;
-              </small>
-            </div>
-          </div>
-
+          {% endif %}
         </div>
-
         <div class="span6">
           {% block content %}
           {% endblock %}

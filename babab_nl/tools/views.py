@@ -23,40 +23,45 @@ from django.template import RequestContext
 from forms import strgenForm
 from string_generator import stringGenerator
 
+
 def rot13(request):
-    data = {'text': ''}
+    data = {'text': '', 'section': 'rot13'}
 
     if request.POST:
-        data = {'text': request.POST['text'].encode('rot13') }
+        data = {'section': 'rot13',
+                'text': request.POST['text'].encode('rot13')}
 
     context = RequestContext(request)
     return render_to_response('tools/rot13.html', data, context)
 
+
 def md5(request):
-    data = {'text': ''}
+    data = {'text': '', 'section': 'md5'}
 
     if request.POST:
         text = request.POST['text']
 
         if text:
             digest = hashlib.md5(text).hexdigest()
-            data = {'text': text, 'digest': digest }
+            data = {'section': 'md5', 'text': text, 'digest': digest}
 
     context = RequestContext(request)
     return render_to_response('tools/md5.html', data, context)
 
+
 def sha1(request):
-    data = {'text': ''}
+    data = {'text': '', 'section': 'sha1'}
 
     if request.POST:
         text = request.POST['text']
 
         if text:
             digest = hashlib.sha1(text).hexdigest()
-            data = {'text': text, 'digest': digest }
+            data = {'section': 'sha1', 'text': text, 'digest': digest}
 
     context = RequestContext(request)
     return render_to_response('tools/sha1.html', data, context)
+
 
 def strgen(request):
     chars = ''
@@ -71,6 +76,7 @@ def strgen(request):
     else:
         form = strgenForm()
 
-    data = {'form': form, 'chars': chars, 'result': result}
+    data = {'section': 'strgen', 'form': form,
+            'chars': chars, 'result': result}
     context = RequestContext(request)
     return render_to_response('tools/strgen.html', data, context)
