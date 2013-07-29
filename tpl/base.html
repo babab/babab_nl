@@ -52,7 +52,6 @@ $def homebutton():
 
           <div class="spacer20"></div>
 
-          <!--
           <div class="row">
             <div class="span3">
 
@@ -64,20 +63,6 @@ $def homebutton():
                     <h1>strgen</h1>
                     <small>
                       Generate random strings and/or passwords
-                    </small>
-                  </div>
-                </div>
-
-              <div class="spacer20"></div>
-
-              $if content.page == 'md5':
-                $:homebutton()
-              $else:
-                <div class="brown dinges" data-href="/md5/">
-                  <div>
-                    <h1>md5</h1>
-                    <small>
-                      Create md5 hash / checksum from text
                     </small>
                   </div>
                 </div>
@@ -98,24 +83,9 @@ $def homebutton():
                   </div>
                 </div>
 
-              <div class="spacer20"></div>
-
-              $if content.page == 'sha1':
-                $:homebutton()
-              $else:
-                <div class="lime dinges" data-href="/sha1/">
-                  <div>
-                    <h1>sha1</h1>
-                    <small>
-                      Create sha1 hash / checksum from text
-                    </small>
-                  </div>
-                </div>
-
             </div>
           </div>
           <div class="spacer20"></div>
-          -->
 
           $if content.page == 'springwhiz':
             $:homebutton()
