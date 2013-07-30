@@ -1,17 +1,25 @@
 #!/usr/bin/env python2
+import sys
 import web
 from web import form
 
-render = web.template.render('tpl/', base='base')
+version = '6.0.0-dev'
 urls = (
     '/',            'index',
     '/dispass/',    'dispass',
     '/rot13/',      'rot13',
     '/springwhiz/', 'springwhiz',
 )
-app = web.application(urls, globals())
 
 rot13_form = form.Form(form.Textarea('text'))
+
+render = web.template.render(
+    'tpl/', base='base',
+    globals={'version_babab': version,
+             'version_python': sys.version.split()[0],
+             'version_webpy': web.__version__}
+)
+app = web.application(urls, globals())
 
 
 class index:
