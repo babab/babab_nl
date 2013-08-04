@@ -3,19 +3,37 @@ import sys
 import web
 from web import form
 
+from string_generator import stringGenerator
+
 version = '6.0.0-dev'
 urls = (
     '/',            'index',
     '/dispass/',    'dispass',
     '/rot13/',      'rot13',
     '/springwhiz/', 'springwhiz',
+    '/strgen/',     'strgen',
 )
 
 rot13_form = form.Form(form.Textarea('text'))
+strgen_form = form.Form(
+    form.Textbox("nchars",
+                 form.notnull,
+                 form.regexp('\d+', 'Must be a digit'),
+                 form.Validator('Must be more then 0 and less then 109',
+                                lambda x: int(x) > 0 and int(x) < 109),
+                 class_='span1', value=50, description='Number of chars'),
+    form.Checkbox('range1', value=1, description='Range a-z', checked=True),
+    form.Checkbox('range2', value=2, description='Range A-Z', checked=True),
+    form.Checkbox('range3', value=3, description='Range 0-9', checked=True),
+    form.Checkbox('range4', value=4, description='Special chars',
+                  checked=True),
+    form.Checkbox('range5', value=5, description='Include !,1,l,i,I,0,o,O'),
+)
 
 render = web.template.render(
     'tpl/', base='base',
-    globals={'version_babab': version,
+    globals={'getattr': getattr,
+             'version_babab': version,
              'version_python': sys.version.split()[0],
              'version_webpy': web.__version__}
 )
@@ -52,7 +70,21 @@ class rot13:
 
 class strgen:
     def GET(self):
-        return render.strgen()
+        form = strgen_form()
+        return render.strgen(form, False)
+
+    def POST(self):
+        form = strgen_form()
+        if form.validates():
+            charOptions = []
+            for ri in range(1, 6):
+                if getattr(form.d, 'range%s' % ri):
+                    charOptions.append(ri)
+
+            result = stringGenerator(charOptions, int(form.d.nchars))
+            return render.strgen(form, result)
+        else:
+            return render.strgen(form, False)
 
 if __name__ == '__main__':
     app.run()
