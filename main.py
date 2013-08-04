@@ -18,7 +18,7 @@ from web import form
 
 from string_generator import stringGenerator
 
-version = '6.0.0-dev'
+version = '6.0.0'
 urls = (
     '/',            'index',
     '/dispass/',    'dispass',
