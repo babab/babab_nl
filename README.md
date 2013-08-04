@@ -4,7 +4,7 @@ It has a webpy backend, bootstrap frontend and is fully open-source. You may
 use (components of) the code as long as you respect the license.
 
 Before I decided to use webpy for my website, it was written in Django.
-Checkout the git source if you're interested.
+Checkout the 'django' tag in the git history if you're interested.
 
 ## Tools
 
