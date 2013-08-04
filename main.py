@@ -1,4 +1,3 @@
-#!/usr/bin/env python2
 import sys
 import web
 from web import form
@@ -85,6 +84,3 @@ class strgen:
             return render.strgen(form, result)
         else:
             return render.strgen(form, False)
-
-if __name__ == '__main__':
-    app.run()
