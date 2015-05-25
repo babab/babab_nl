@@ -1,0 +1,52 @@
+; tuhinga document for babab.nl
+
+html5
+  head
+    meta-charset utf-8
+    meta :name=viewport device-width, initial-scale=1.0
+    title babab.nl - website of Benjamin Althues
+    css http://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cyborg/bootstrap.min.css
+  body
+    .container
+      h1.page-header babab.nl
+        small website of Benjamin Althues
+      p babab.nl will be back with fresh content soon. Meanwhile, checkout:
+      .row
+        .col-lg-6
+          .list-group
+            a.list-group-item :href=http://code.babab.nl
+              h4.list-group-item-heading code.babab.nl
+              p.list-group-item-text overview of all my open source projects
+            a.list-group-item :href=https://cloud.babab.nl
+              h4.list-group-item-heading cloud.babab.nl
+              p.list-group-item-text a place where I host some 'cloud' apps
+          .list-group
+            a.list-group-item :href=https://github.com/babab
+              h4.list-group-item-heading github/babab
+              p.list-group-item-text github profile
+            a.list-group-item :href=https://bitbucket.org/babab
+              h4.list-group-item-heading bitbucket/babab
+              p.list-group-item-text bitbucket profile
+        .col-lg-6
+          .list-group
+            a.list-group-item :href=http://dispass.org
+              h4.list-group-item-heading dispass.org
+              p.list-group-item-text dispass is a password manager without a database
+            a.list-group-item :href=http://pythonhosted.org/tuhinga/
+              h4.list-group-item-heading tuhinga markup language
+              p.list-group-item-text minimalistic markup language that translates to XML/HTML
+            a.list-group-item :href=http://pythonhosted.org/pycommand/
+              h4.list-group-item-heading pycommand
+              p.list-group-item-text a clean and simplistic alternative for argparse, optparse and getopt
+            a.list-group-item :href=http://simphplist.org
+              h4.list-group-item-heading simphplist.org
+              p.list-group-item-text a micro-framework with anti-framework features
+
+    .container
+      p.muted.pull-right this page is written in
+        a :href=http://pythonhosted.org/tuhinga/ tuhinga
+        :: --- view the source
+        a :href=index.tuh here
+      p.muted Copyright &copy; 2015 Benjamin Althues
+
+; vim: set ft=tuh et st=2 sts=2 sw=2:
