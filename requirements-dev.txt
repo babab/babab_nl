@@ -1,0 +1,2 @@
+Pygments>=2.0.2
+rst2pdf
