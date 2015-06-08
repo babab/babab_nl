@@ -3,6 +3,15 @@ from django.db import models
 
 class Base(models.Model):
     '''Abstract base class'''
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
+
+
+class NamedBase(Base):
+    '''Abstract base class with a name field'''
     name = models.CharField(max_length=100)
 
     def __str__(self):
@@ -12,23 +21,21 @@ class Base(models.Model):
         abstract = True
 
 
-class Tag(Base):
+class Tag(NamedBase):
     '''Tags for blog articles'''
 
 
-class Comment(Base):
+class Comment(NamedBase):
     '''Comments for blog articles'''
     email = models.EmailField()
-    body = models.TextField()
     html = models.TextField()
 
 
-class Article(models.Model):
+class Article(Base):
     '''Blog articles'''
     title = models.CharField(max_length=80)
     url = models.SlugField(max_length=80)
     tags = models.ManyToManyField(Tag)
-    body = models.TextField()
     html = models.TextField()
 
     def __str__(self):
