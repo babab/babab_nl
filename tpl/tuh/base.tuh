@@ -1,0 +1,24 @@
+; tuhinga document for babab.nl
+
+html5
+  head
+    meta-charset utf-8
+    meta :name=viewport device-width, initial-scale=1.0
+    title babab.nl - website of Benjamin Althues
+    css //maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cyborg/bootstrap.min.css
+  body
+    .container
+      h1.page-header babab.nl
+        small website of Benjamin Althues
+      .row
+        .col-lg-6 {% block content %}{% endblock %}
+        .col-lg-6 {% block sidebar %}{% endblock %}
+
+    .container
+;      p.muted.pull-right this page is written in
+;        a :href=http://pythonhosted.org/tuhinga/ tuhinga
+;        :: --- view the source
+;        a :href=index.tuh here
+      p.muted Copyright &copy; 2015 Benjamin Althues
+
+; vim: set ft=tuh et st=2 sts=2 sw=2:

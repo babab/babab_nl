@@ -1,0 +1,15 @@
+div {% block content %}
+  h2 about me
+  p I am a computer enthusiast and software developer, passionate
+    :: about free and open source software and Unix-like operating systems.
+  h2 email / irc / xmpp
+  p If you want to contact me you can drop me an email at
+    a :href=&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;
+      :: &#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;
+  p You can find me idling on
+    em #dispass
+    :: at
+    em Freenode
+  p Contact me through jabber/xmpp at
+    em benjamin@dukgo.com
+  :: {% endblock %}

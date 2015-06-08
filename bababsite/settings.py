@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+from django.contrib import messages
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'bababsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'tpl', 'html')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -102,3 +104,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'assets'),
+)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+# Bootstrap message compatibility
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
