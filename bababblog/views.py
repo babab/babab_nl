@@ -1,6 +1,8 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
+from bababblog import models
+
 
 def view(request, template, data={}):
     '''Shortcut view return function with RequestContext'''
@@ -10,4 +12,6 @@ def view(request, template, data={}):
 
 
 def index(request):
-    return view(request, 'index.html')
+    articles = models.Article.objects.all().order_by('-created_at')
+    data = {'articles': articles}
+    return view(request, 'index.html', data)

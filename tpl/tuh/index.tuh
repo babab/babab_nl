@@ -1,15 +1,36 @@
-div {% block content %}
-  h2 about me
-  p I am a computer enthusiast and software developer, passionate
-    :: about free and open source software and Unix-like operating systems.
-  h2 email / irc / xmpp
-  p If you want to contact me you can drop me an email at
-    a :href=&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;
-      :: &#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;
-  p You can find me idling on
-    em #dispass
-    :: at
-    em Freenode
-  p Contact me through jabber/xmpp at
-    em benjamin@dukgo.com
+block
+  :: {% block content %}
+  :: {% for i in articles  %}
+
+    h2 {{ i.title  }}
+    ul.list-inline
+      li created at: {{ i.created_at }}
+      li tags:
+        :: {% for t in i.tags.all  %}
+        span.label.label-default {{ t.name }}
+        :: {% endfor %}
+
+    article
+      :: {{ i.html|safe }}
+
+  :: {% endfor %}
   :: {% endblock %}
+block
+  :: {% block sidebar %}
+  .well
+    h3 about me
+    p I am a computer enthusiast and software developer, passionate
+      :: about free and open source software and Unix-like operating systems.
+    h3 email / irc / xmpp
+    p If you want to contact me you can drop me an email at
+      a :href=&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;
+        :: &#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;
+    p You can find me idling on
+      em #dispass
+      :: at
+      em Freenode
+    p Contact me through jabber/xmpp at
+      em benjamin@dukgo.com
+  :: {% endblock %}
+
+; vim: set ft=tuh et st=2 sts=2 sw=2:
