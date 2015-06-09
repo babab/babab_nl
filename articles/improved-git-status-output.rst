@@ -1,6 +1,6 @@
 The output of git status is pretty great. It shows if you are in sync
 with the current tracked remote branch and the staged files for your
-next commit. It also is a big help if you are new to Git, since it
+next commit. It's also is a big help if you are new to Git, since it
 practically tells you what to do next and how to do it.
 
 Here is an example of the output of git status in my dotfiles repository:
@@ -29,7 +29,7 @@ Here is an example of the output of git status in my dotfiles repository:
       modified:   bin/ctb
 
 
-If you get used to working with git you want something a little bit
+If you get used to working with git you want something a little less
 verbose, so you try out ``git status --short`` and maybe even set it as
 a git or shell command alias. The output is indeed short and also does a
 better job in indicating if you have both staged and unstaged lines in a
