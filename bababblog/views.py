@@ -12,6 +12,6 @@ def view(request, template, data={}):
 
 
 def index(request):
-    articles = models.Article.objects.all().order_by('-created_at')
-    data = {'articles': articles}
+    latest = models.Article.objects.latest()
+    data = {'latest': latest}
     return view(request, 'index.html', data)

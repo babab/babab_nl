@@ -40,3 +40,6 @@ class Article(Base):
 
     def __str__(self):
         return self.url
+
+    class Meta:
+        get_latest_by = 'updated_at'

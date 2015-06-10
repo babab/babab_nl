@@ -1,19 +1,17 @@
 block
   :: {% block content %}
-  :: {% for i in articles  %}
+    .well
+      h2 {{ latest.title  }}
+      h4
+        ul.list-inline
+          li.pull-right
+            :: {% for t in latest.tags.all  %}
+            span.label.label-success {{ t.name }}
+            :: {% endfor %}
+          li {{ latest.created_at }}
 
-    h2 {{ i.title  }}
-    ul.list-inline
-      li created at: {{ i.created_at }}
-      li tags:
-        :: {% for t in i.tags.all  %}
-        span.label.label-default {{ t.name }}
-        :: {% endfor %}
-
-    article
-      :: {{ i.html|safe }}
-
-  :: {% endfor %}
+      article
+        :: {{ latest.html|safe }}
   :: {% endblock %}
 block
   :: {% block sidebar %}
