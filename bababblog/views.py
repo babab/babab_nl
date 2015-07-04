@@ -13,5 +13,6 @@ def view(request, template, data={}):
 
 def index(request):
     latest = models.Article.objects.latest()
-    data = {'latest': latest}
+    articles = models.Article.objects.all()
+    data = {'latest': latest, 'articles': articles}
     return view(request, 'index.html', data)

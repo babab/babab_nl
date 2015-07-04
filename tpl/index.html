@@ -2,6 +2,14 @@
 
 {% block content %}
 
+  <p>
+    At babab.nl you can find links to projects I've created, blog
+    articles about programming and *nix system administration and
+    working in the console, as well as some nifty tools.
+  </p>
+
+  <p>Here is my latest blog article:</p>
+
   <div class="well">
     <h2>{{ latest.title }}</h2>
     <h4>
@@ -28,15 +36,60 @@
       I am a computer enthusiast and software developer, passionate
       about free and open source software and Unix-like operating systems.
     </p>
-    <h3>email / irc / xmpp</h3>
-    <p>
-      If you want to contact me you can drop me an email at
-      <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;">
-        &#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;
-      </a>
-    </p>
-    <p>You can find me idling on <em>#dispass</em> at <em>Freenode</em></p>
-    <p>Contact me through jabber/xmpp at <em>benjamin@dukgo.com</em></p>
+    <ul class="list-unstyled">
+      <li>
+        <span class="pull-right">
+          <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;">
+            &#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;
+          </a>
+        </span>
+        <strong>email</strong>
+      </li>
+      <li>
+        <span class="pull-right">
+          <a href="xmpp:benjamin@dukgo.com?roster">benjamin@dukgo.com</a>
+        </span>
+        <strong>jabber/xmpp </strong>
+      </li>
+      <li>
+        <span class="pull-right">
+          <em>babab</em> at <em>Freenode</em>
+        </span>
+        <strong>irc</strong>
+      </li>
+      <li>&nbsp;</li>
+      <li>
+        <span class="pull-right">
+          <a href="https://plus.google.com/+BenjaminAlthues" target="_blank">
+            +BenjaminAlthues
+          </a>
+        </span>
+        <i class="fa fa-google-plus"></i> &nbsp;
+      </li>
+    </ul>
+  </div>
+
+  <div class="well">
+    <h3>
+      <small class="pull-right">
+        <a class="btn btn-xs btn-default" href="javascript:;">show all</a>
+      </small>
+      latest articles
+    </h3>
+    <ul class="list-unstyled">
+      {% for item in articles %}
+        <li>
+          <span class="pull-right">
+            {% for t in latest.tags.all %}
+              <span class="label label-success">{{ t.name }}</span>
+            {% endfor %}
+          </span>
+          <a href="javascript:;">
+            {{ item.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
   </div>
 
 {% endblock %}
