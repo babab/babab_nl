@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class="well">
+    <h2>{{ latest.title }}</h2>
+    <h4>
+      <ul class="list-inline">
+        <li class="pull-right">
+          {% for t in latest.tags.all %}
+          <span class="label label-success">{{ t.name }}</span>
+          {% endfor %}
+        </li>
+        <li>{{ latest.created_at }}</li>
+      </ul>
+    </h4>
+    <article>
+      {{ latest.html|safe }}
+    </article>
+  </div>
+
+{% endblock %}
+{% block sidebar %}
+
+  <div class="well">
+    <h3>about me</h3>
+    <p>
+      I am a computer enthusiast and software developer, passionate
+      about free and open source software and Unix-like operating systems.
+    </p>
+    <h3>email / irc / xmpp</h3>
+    <p>
+      If you want to contact me you can drop me an email at
+      <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;">
+        &#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;
+      </a>
+    </p>
+    <p>You can find me idling on <em>#dispass</em> at <em>Freenode</em></p>
+    <p>Contact me through jabber/xmpp at <em>benjamin@dukgo.com</em></p>
+  </div>
+
+{% endblock %}
+
