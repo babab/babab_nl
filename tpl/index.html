@@ -2,95 +2,99 @@
 
 {% block content %}
 
-  <p>
-    At babab.nl you can find links to projects I've created, blog
-    articles about programming and *nix system administration and
-    working in the console, as well as some nifty tools.
-  </p>
+<div class="row">
+  <div class="col-lg-8">
 
-  <p>Here is my latest blog article:</p>
-
-  <div class="well">
-    <h2>{{ latest.title }}</h2>
-    <h4>
-      <ul class="list-inline">
-        <li class="pull-right">
-          {% for t in latest.tags.all %}
-          <span class="label label-success">{{ t.name }}</span>
-          {% endfor %}
-        </li>
-        <li>{{ latest.created_at }}</li>
-      </ul>
-    </h4>
-    <article>
-      {{ latest.html|safe }}
-    </article>
-  </div>
-
-{% endblock %}
-{% block sidebar %}
-
-  <div class="well">
-    <h3>about me</h3>
     <p>
-      I am a computer enthusiast and software developer, passionate
-      about free and open source software and Unix-like operating systems.
+      A home for links to projects I've created and blog articles about
+      *nix system administration and programming.
     </p>
-    <ul class="list-unstyled">
-      <li>
-        <span class="pull-right">
-          <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;">
-            &#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;
-          </a>
-        </span>
-        <strong>email</strong>
-      </li>
-      <li>
-        <span class="pull-right">
-          <a href="xmpp:benjamin@dukgo.com?roster">benjamin@dukgo.com</a>
-        </span>
-        <strong>jabber/xmpp </strong>
-      </li>
-      <li>
-        <span class="pull-right">
-          <em>babab</em> at <em>Freenode</em>
-        </span>
-        <strong>irc</strong>
-      </li>
-      <li>&nbsp;</li>
-      <li>
-        <span class="pull-right">
-          <a href="https://plus.google.com/+BenjaminAlthues" target="_blank">
-            +BenjaminAlthues
-          </a>
-        </span>
-        <i class="fa fa-google-plus"></i> &nbsp;
-      </li>
-    </ul>
-  </div>
 
-  <div class="well">
-    <h3>
-      <small class="pull-right">
-        <a class="btn btn-xs btn-default" href="javascript:;">show all</a>
-      </small>
-      latest articles
-    </h3>
-    <ul class="list-unstyled">
-      {% for item in articles %}
+    <p>Here is my latest blog article:</p>
+
+    <div class="well">
+      <h2>{{ latest.title }}</h2>
+      <h4>
+        <ul class="list-inline">
+          <li class="pull-right">
+            {% for t in latest.tags.all %}
+            <span class="label label-success">{{ t.name }}</span>
+            {% endfor %}
+          </li>
+          <li>{{ latest.created_at }}</li>
+        </ul>
+      </h4>
+      <article>
+        {{ latest.html|safe }}
+      </article>
+    </div>
+
+  </div>
+  <div class="col-lg-4">
+
+    <div class="well">
+      <h3>about me</h3>
+      <p>
+        I am a computer enthusiast and software developer, passionate
+        about free and open source software and Unix-like operating systems.
+      </p>
+      <ul class="list-unstyled">
         <li>
           <span class="pull-right">
-            {% for t in latest.tags.all %}
-              <span class="label label-success">{{ t.name }}</span>
-            {% endfor %}
+            <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;">
+              &#98;&#101;&#110;&#106;&#97;&#109;&#105;&#110;&#64;&#98;&#97;&#98;&#97;&#98;&#46;&#110;&#108;
+            </a>
           </span>
-          <a href="javascript:;">
-            {{ item.title }}
-          </a>
+          <strong>email</strong>
         </li>
-      {% endfor %}
-    </ul>
+        <li>
+          <span class="pull-right">
+            <a href="xmpp:benjamin@dukgo.com?roster">benjamin@dukgo.com</a>
+          </span>
+          <strong>jabber/xmpp </strong>
+        </li>
+        <li>
+          <span class="pull-right">
+            <em>babab</em> at <em>Freenode</em>
+          </span>
+          <strong>irc</strong>
+        </li>
+        <li>&nbsp;</li>
+        <li>
+          <span class="pull-right">
+            <a href="https://plus.google.com/+BenjaminAlthues" target="_blank">
+              +BenjaminAlthues
+            </a>
+          </span>
+          <i class="fa fa-google-plus"></i> &nbsp;
+        </li>
+      </ul>
+    </div>
+
+    <div class="well">
+      <h3>
+        <small class="pull-right">
+          <a class="btn btn-xs btn-default" href="javascript:;">show all</a>
+        </small>
+        latest articles
+      </h3>
+      <ul class="list-unstyled">
+        {% for item in articles %}
+          <li>
+            <span class="pull-right">
+              {% for t in latest.tags.all %}
+                <span class="label label-success">{{ t.name }}</span>
+              {% endfor %}
+            </span>
+            <a href="javascript:;">
+              {{ item.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
   </div>
+</div>
 
 {% endblock %}
-
