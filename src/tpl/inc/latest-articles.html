@@ -1,11 +1,11 @@
 {% load bababtags %}
 <div class="well">
+  <!--
   <small class="pull-right">
     <a class="btn btn-sm btn-link" href="javascript:;">show all</a>
   </small>
-  <h3>
-    latest articles
-  </h3>
+  -->
+  <h3>blog</h3>
   <ul class="list-unstyled">
     {% for item in articles %}
       <li>
@@ -17,9 +17,11 @@
             </span>
           {% endfor %}
         </span>
-        <a href="javascript:;">
-          {{ item.title }}
-        </a>
+        {% if item.url == article.url or item.url == latest.url %}
+          <strong>{{ item.title }}</strong>
+        {% else %}
+          <a href="{% url 'article' item.url %}">{{ item.title }}</a>
+        {% endif %}
       </li>
     {% endfor %}
   </ul>

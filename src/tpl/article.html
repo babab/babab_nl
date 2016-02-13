@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% load bababtags %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-lg-8">
+
+    <div class="well">
+      <h2>{{ article.title }}</h2>
+      <h4>
+        <ul class="list-inline">
+          <li class="pull-right">
+            {% for t in article.tags.all %}
+              <span class="label label-success"
+                    style="background-color: #{{ t.name|hex }}">
+                {{ t.name }}
+              </span>
+            {% endfor %}
+          </li>
+          <li>{{ article.created_at }}</li>
+        </ul>
+      </h4>
+      <article>
+        {{ article.html|safe }}
+      </article>
+    </div>
+
+  </div>
+  <div class="col-lg-4">
+    <small class="pull-right">
+      <a class="btn btn-sm btn-link" href="{% url 'index' %}">back to home</a>
+    </small>
+    {% include "inc/latest-articles.html" %}
+    {% include "inc/project-list.html" %}
+    {% include "inc/about-me.html" %}
+  </div>
+</div>
+
+{% endblock %}
+

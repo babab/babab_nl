@@ -37,3 +37,12 @@ def project(request, project_name):
         data = {'project': None}
         raise Http404('Project {} does not exist'.format(project_name))
     return defaultview(request, 'project.html', data)
+
+
+def article(request, article_url):
+    try:
+        data = {'article': models.Article.objects.get(url=article_url)}
+    except models.Article.DoesNotExist:
+        data = {'article': None}
+        raise Http404('Article {} does not exist'.format(article_url))
+    return defaultview(request, 'article.html', data)
