@@ -1,0 +1,39 @@
+{% load bababtags %}
+
+<div class="well">
+  <h3>projects</h3>
+  <ul class="list-unstyled">
+    {% for item in projects %}
+      <li>
+        <span class="pull-right">
+          <span class="label label-success"
+                style="background-color: #{{ item.language|hex }}">
+            {{ item.language }}
+          </span>
+          &nbsp;
+          <a title="visit {{ item.name }} on Github"
+             target="_blank" href="https://github.com/babab/{{ item.name }}">
+            <i class="fa fa-github-square"></i>
+          </a>
+
+          &nbsp;
+          {% if item.homepage %}
+            <a href="{{ item.homepage }}" target="_blank"
+               title="homepage for {{ item.name }}">
+              <i class="fa fa-chain"></i>
+            </a>
+          {% else %}
+              <i class="fa fa-chain" style="visibility: hidden"></i>
+          {% endif %}
+        </span>
+
+        {% if item.name == project.name %}
+          <strong>{{ item.name }}</strong>
+        {% else %}
+          <a href="{% url 'project' item.name %}"
+             title="{{ item.description }}">{{ item.name }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

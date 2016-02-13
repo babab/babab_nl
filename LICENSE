@@ -1,14 +1,3 @@
-babab.nl
-========
-
-Website with a very simple blog and projects section written in Python
-and Django. Repository information and README's for all projects are
-fetched from Github regularly.
-
-
-License
--------
-
 Copyright (c) 2015-2016 Benjamin Althues <benjamin@althu.es>
 
 Permission to use, copy, modify, and distribute this software for any

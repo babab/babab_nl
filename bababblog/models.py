@@ -8,6 +8,7 @@ class Base(models.Model):
 
     class Meta:
         abstract = True
+        get_latest_by = 'updated_at'
 
 
 class NamedBase(Base):
@@ -35,11 +36,28 @@ class Article(Base):
     '''Blog articles'''
     title = models.CharField(max_length=80)
     url = models.SlugField(max_length=80)
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(Tag, blank=True)
     html = models.TextField()
 
     def __str__(self):
         return self.url
 
+
+class Project(NamedBase):
+    '''Projects'''
+    language = models.CharField(blank=True, max_length=50)
+    homepage = models.URLField(blank=True, null=True)
+    description = models.CharField(blank=True, max_length=2048)
+    ordering = models.SmallIntegerField(default=32767)
+    html = models.TextField()
+    json = models.TextField()
+
+    def __str__(self):
+        return '{} - {}'.format(self.ordering, self.name)
+
+    # def save(self, *args, **kwargs):
+    #     self.languageHash = str2hex(self.language)
+    #     super().save(*args, **kwargs)
+
     class Meta:
-        get_latest_by = 'updated_at'
+        ordering = ['ordering', 'updated_at']

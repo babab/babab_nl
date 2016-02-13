@@ -1,0 +1,26 @@
+{% load bababtags %}
+<div class="well">
+  <small class="pull-right">
+    <a class="btn btn-sm btn-link" href="javascript:;">show all</a>
+  </small>
+  <h3>
+    latest articles
+  </h3>
+  <ul class="list-unstyled">
+    {% for item in articles %}
+      <li>
+        <span class="pull-right">
+          {% for t in item.tags.all %}
+            <span class="label label-success"
+                  style="background-color: #{{ t.name|hex }}">
+              {{ t.name }}
+            </span>
+          {% endfor %}
+        </span>
+        <a href="javascript:;">
+          {{ item.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

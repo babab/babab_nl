@@ -10,3 +10,4 @@ class ArticleAdmin(admin.ModelAdmin):
 admin.site.register(models.Tag)
 admin.site.register(models.Comment)
 admin.site.register(models.Article, ArticleAdmin)
+admin.site.register(models.Project)

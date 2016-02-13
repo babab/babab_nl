@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-lg-8">
+    <div class="well">
+
+      <small class="text-muted">
+        repository information was fetched from Github
+        {{ project.updated_at|naturaltime }}
+      </small>
+
+      {% if project.homepage %}
+        <p>
+          Below is just a README for the project, check out the website
+          for {{ project.name }} at
+          <a href="{{ project.homepage }}">{{ project.homepage }}</a>
+        </p>
+      {% endif %}
+
+    </div>
+    <div class="well">
+      <article>
+        <div class="pull-right">
+          <a class="btn btn-link" title="visit {{ project.name }} on Github"
+             target="_blank" href="https://github.com/babab/{{ project.name }}">
+            <i class="fa fa-2x fa-github"></i>
+          </a>
+          {% if project.homepage %}
+            <a href="{{ project.homepage }}" target="_blank"
+               class="btn btn-link" title="homepage for {{ project.name }}">
+              <i class="fa fa-2x fa-chain"></i>
+            </a>
+          {% endif %}
+        </div>
+
+        {{ project.html|safe }}
+      </article>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <small class="pull-right">
+      <a class="btn btn-sm btn-link" href="{% url 'index' %}">back to home</a>
+    </small>
+    {% include "inc/project-list.html" %}
+    {% include "inc/latest-articles.html" %}
+    {% include "inc/about-me.html" %}
+  </div>
+</div>
+
+{% endblock %}

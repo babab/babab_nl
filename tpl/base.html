@@ -3,27 +3,41 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="device-width, initial-scale=1.0">
-    <title>babab.nl - website of Benjamin Althues</title>
+    <title>benjamin.althu.es | projects and blog</title>
     <link rel="stylesheet"
-          href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cosmo/bootstrap.min.css">
+          href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css">
     <link rel="stylesheet"
-          href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+          href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static "pygments.css" %}">
-    <link rel="stylesheet" href="{% static "main.css" %}">
   </head>
   <body>
     <div class="container">
       <h1 class="page-header">
-        babab.nl
-        <small>website of Benjamin Althues</small>
+        benjamin.althu.es
+        <small>open source projects | blog</small>
       </h1>
       {% block content %}{% endblock %}
     </div>
+
     <div class="container">
-      <p class="muted">Copyright &copy; 2015 Benjamin Althues</p>
+      <div class="well text-center">
+        <p class="muted">
+          Copyright &copy; 2015-2016 Benjamin Althues
+          <br>
+          <small>
+            The code for this website is released under an ISC License
+          </small>
+        </p>
+        <small class="muted">
+          <a href="https://dispass.org">dispass.org</a>
+          | <a href="http://simphplist.org">simphplist.org</a>
+          | <a href="https://cloud.babab.nl">cloud.babab.nl</a>
+        </small>
+      </div>
     </div>
 
-    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="{% static "main.js" %}"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
     <script>
       $.backstretch('{% static "backdrop.png" %}');

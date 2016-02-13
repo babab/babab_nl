@@ -33,12 +33,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sessions',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+
+    # 'debug_toolbar',
+    # 'django_extensions',
 
     'bababblog',
 )
@@ -115,3 +120,20 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
+
+# bababblog settings
+
+PROJECTS_IGNORE_LIST = [
+    'all',
+    'code.babab.nl',
+    'dispass-website',
+    'gitto',
+    'gitto-pkgbuild',
+    'kebokun',
+    'pagestest',
+    'slate',
+    'sti',
+    'youtube-comments-disabler',
+]
+
+GITHUB_USERNAME = 'babab'
