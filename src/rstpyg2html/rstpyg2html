@@ -1,4 +1,4 @@
 #!/bin/sh
 
-P=${PWD}/.virtualenv2/bin/python
+P=python
 $P rstpyg2html.py --template template.txt $@
