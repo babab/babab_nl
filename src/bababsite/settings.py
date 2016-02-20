@@ -127,12 +127,9 @@ PROJECTS_IGNORE_LIST = [
     'all',
     'code.babab.nl',
     'dispass-website',
-    'gitto',
     'gitto-pkgbuild',
     'kebokun',
     'pagestest',
-    'slate',
-    'sti',
     'youtube-comments-disabler',
 ]
 

@@ -30,7 +30,7 @@ class GithubApi:
                                    .format(self.url, self.username))
         repos = []
         for item in request.json():
-            if item['name'] not in self.ignore:
+            if not item['fork'] and item['name'] not in self.ignore:
                 repos.append([item['updated_at'], item])
         if sort:
             repos.sort(reverse=True)
